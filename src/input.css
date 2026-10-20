@@ -782,6 +782,81 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
 }
 
 /* --------------------------------------------------------------------------
+   Forms (first used on Contact). Label above, 48px fields, error text below.
+   -------------------------------------------------------------------------- */
+@layer components {
+  .field-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .field-hint { display: block; margin-top: 0.125rem; font-size: 0.8125rem; color: var(--color-muted); }
+  .field {
+    display: block;
+    width: 100%;
+    min-height: 3rem;
+    margin-top: 0.375rem;
+    padding: 0.625rem 0.875rem;
+    border: 1px solid var(--color-line-strong);
+    border-radius: 4px;
+    background: var(--color-paper);
+    color: var(--color-fg);
+    font: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .field::placeholder { color: var(--color-muted); opacity: 1; }
+  textarea.field { min-height: 9rem; resize: vertical; }
+  select.field {
+    appearance: none;
+    padding-inline-end: 2.5rem;
+    background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+    background-position: calc(100% - 1.1rem) 55%, calc(100% - 0.75rem) 55%;
+    background-size: 0.35rem 0.35rem;
+    background-repeat: no-repeat;
+  }
+  [dir="rtl"] select.field { background-position: 1.1rem 55%, 0.75rem 55%; }
+  .field:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; border-color: var(--focus); }
+  .field[aria-invalid="true"] { border-color: var(--color-error); border-width: 2px; }
+  .field-error {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.375rem;
+    margin-top: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-error);
+  }
+  .field-error[hidden] { display: none; }
+  .form-status {
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-inline-start: 4px solid currentColor;
+    font-size: 0.9375rem;
+  }
+  .form-status[hidden] { display: none; }
+  .form-status--error { background: var(--color-error-bg); color: var(--color-error); }
+  .form-status--info { background: var(--color-warning-bg); color: var(--color-warning); }
+  .form-status--info strong, .form-status--error strong { color: inherit; }
+
+  /* Map frame: Leaflet controls follow the theme */
+  .map-frame { position: relative; isolation: isolate; background: var(--color-sand); }
+  .map-frame .leaflet-container { font-family: var(--font-sans); background: var(--color-sand); }
+  .map-frame .leaflet-control-attribution {
+    background: color-mix(in srgb, var(--color-paper) 92%, transparent);
+    color: var(--color-fg);
+    font-size: 0.75rem;
+  }
+  .map-frame .leaflet-control-attribution a { color: var(--color-crimson); }
+  .map-frame .leaflet-bar a {
+    width: 2.75rem; height: 2.75rem; line-height: 2.75rem;
+    background: var(--color-paper); color: var(--color-fg); border-color: var(--color-line);
+  }
+  .map-frame .leaflet-bar a:hover { background: var(--color-sand); }
+}
+
+/* --------------------------------------------------------------------------
    About: "The Programme Booklet" devices
    -------------------------------------------------------------------------- */
 @layer components {
@@ -883,3 +958,22 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
   .hero-full .btn-lg { padding-inline: 1rem; font-size: 0.8125rem; letter-spacing: 0.04em; }
   .hero-full .type-display { font-size: clamp(2.75rem, 1.5rem + 5vw, 4.5rem); }
 }
+
+/* Contact map: darken OpenStreetMap tiles in the dark theme (tiles themselves are light) */
+html[data-theme="dark"] .map-frame .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.9);
+}
+/* Leaflet's stylesheet is unlayered, so its control styles win over @layer rules: theme them here */
+.map-frame .leaflet-bar a,
+.map-frame .leaflet-bar a:hover {
+  width: 2.75rem; height: 2.75rem; line-height: 2.75rem; font-size: 1.25rem;
+  background-color: var(--color-paper); color: var(--color-fg); border-bottom-color: var(--color-line);
+}
+.map-frame .leaflet-bar a:hover { background-color: var(--color-sand); }
+.map-frame .leaflet-bar { border: 1px solid var(--color-line-strong); }
+.map-frame .leaflet-control-attribution {
+  background: color-mix(in srgb, var(--color-paper) 92%, transparent);
+  color: var(--color-fg);
+}
+.map-frame .leaflet-control-attribution a { color: var(--color-crimson); }
+.map-frame .leaflet-container { font-family: var(--font-sans); background: var(--color-sand); }

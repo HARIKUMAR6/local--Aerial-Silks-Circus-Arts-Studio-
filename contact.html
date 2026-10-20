@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Aerial Silks &amp; Circus Arts Studio (temporary name)</title>
+  <meta name="description" content="Get in touch about aerial silks and circus arts: send an enquiry and find the studio.">
+  <meta name="theme-color" content="#16120f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%2316120f'/%3E%3Ccircle cx='20' cy='4' r='2.4' fill='%23ff5a1f'/%3E%3Cpath d='M20 6.5C27 11 27 16 20 20.5S10 28 9 38' fill='none' stroke='%23f2ece3' stroke-width='2.75' stroke-linecap='round'/%3E%3Cpath d='M20 6.5C13 11 13 16 20 20.5S30 28 31 38' fill='none' stroke='%23e8566b' stroke-width='2.75' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Instrument+Serif:ital@1&amp;display=swap">
+  <!-- Leaflet 1.9.4 (map library), pinned with Subresource Integrity -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+        integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Applies the saved / system theme and direction before first paint -->
+  <script src="assets/js/preferences.js"></script>
+  <script src="assets/js/site-chrome.js" defer></script>
+  <script src="assets/js/home.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
+          integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="assets/js/contact.js" defer></script>
+</head>
+
+<!--
+  CONTACT — five sections: Hero · Get in touch · Send an enquiry · Find the studio · Before you reach out.
+  No phone, email, address, hours or social links are shown: none are verified in the project.
+  The form has no backend and says so; the map shows no studio pin until an address is confirmed (see contact.js).
+-->
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <site-header current="contact">
+    <noscript>
+      <nav aria-label="Main" class="on-stage bg-stage px-4 py-3">
+        <a href="index.html">Home 1</a> · <a href="home-2.html">Home 2</a> · <a href="about.html">About</a> ·
+        <a href="classes.html">Classes</a> · <a href="instructors.html">Instructors</a> · <a href="contact.html" aria-current="page">Contact</a> ·
+        <a href="portal/dashboard.html">Dashboard</a> · <a href="portal/index.html">Student login</a>
+      </nav>
+    </noscript>
+  </site-header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ================================================================
+         1 · HERO — oversized headline wrapping round a circular photograph
+         ================================================================ -->
+    <section class="hero-fit relative overflow-hidden bg-sand lg:flex lg:items-center" aria-labelledby="ct-hero-title">
+      <div class="shell py-10 sm:py-14 lg:py-[clamp(2rem,5svh,3.5rem)]">
+        <div class="grid grid-cols-[minmax(0,1fr)] items-center gap-10 md:grid-cols-12 md:gap-8">
+
+          <div class="order-2 md:order-1 md:col-span-7" data-reveal>
+            <p class="eyebrow text-crimson">Contact</p>
+            <h1 id="ct-hero-title" class="type-display hero-title-fit mt-5 max-w-[12ch] lg:mt-[clamp(0.75rem,2svh,1.25rem)]">
+              Let&rsquo;s start a <span class="accent-serif text-crimson">conversation.</span>
+            </h1>
+            <p class="type-lead mt-6 max-w-[30rem] text-muted lg:mt-[clamp(1rem,2.5svh,1.5rem)]">
+              Curious about aerial arts? Ask us anything — about classes, getting started or what to expect.
+            </p>
+            <a href="#enquiry" class="btn btn-primary btn-lg mt-8 lg:mt-[clamp(1.25rem,3.5svh,2rem)]">
+              Send an enquiry
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+          </div>
+
+          <!-- Circular photograph with an offset crimson ring — a shape used only on this page -->
+          <figure class="relative order-1 mx-auto w-[min(78vw,20rem)] md:order-2 md:col-span-5 md:w-full md:max-w-[26rem] lg:max-w-[min(30rem,calc(100svh-var(--header-h)-8rem))]" data-reveal>
+            <div class="media aspect-square rounded-full outline-2 outline-offset-8 outline-crimson">
+              <img
+                src="assets/images/contact/hero-hoop-sunset-800.jpg"
+                srcset="assets/images/contact/hero-hoop-sunset-800.jpg 800w, assets/images/contact/hero-hoop-sunset-1600.jpg 1600w"
+                sizes="(min-width: 768px) 30vw, 78vw"
+                width="1600" height="2400"
+                alt="An aerialist stands in a hoop by the water at sunset, hands raised on the ring."
+                class="rounded-full object-[50%_40%]" fetchpriority="high">
+            </div>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         2 · GET IN TOUCH — how to reach the studio + topic shortcuts
+         ================================================================ -->
+    <section class="section-y-compact bg-chalk" aria-labelledby="ct-touch-title">
+      <div class="shell">
+        <div class="grid grid-cols-[minmax(0,1fr)] gap-8 border-y border-fg py-8 lg:grid-cols-12 lg:items-start lg:gap-8 lg:py-10">
+          <div class="lg:col-span-4" data-reveal>
+            <p class="eyebrow text-crimson">Get in touch</p>
+            <h2 id="ct-touch-title" class="type-h2 mt-4">Write to us <span class="accent-serif text-crimson">here.</span></h2>
+            <p class="mt-3 max-w-[26rem] text-muted">The enquiry form below is the best way to reach the studio. Direct contact details will be listed on this page once they are published.</p>
+          </div>
+
+          <nav class="lg:col-span-7 lg:col-start-6" aria-labelledby="ct-topics-title" data-reveal>
+            <h3 id="ct-topics-title" class="eyebrow text-muted">I'd like to ask about&hellip;</h3>
+            <ul class="mt-3 grid grid-cols-[minmax(0,1fr)] sm:grid-cols-2" role="list">
+              <li class="border-t border-line sm:odd:pe-6"><a href="#enquiry" data-topic="classes" class="group flex min-h-14 items-center justify-between gap-3 py-3 text-fg no-underline hover:text-crimson"><span class="type-h4">Classes</span><svg class="flip-x size-5 shrink-0 text-crimson" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h17m-6-7 7 7-7 7" stroke="currentColor" stroke-width="1.75"/></svg></a></li>
+              <li class="border-t border-line sm:even:ps-6"><a href="#enquiry" data-topic="starting" class="group flex min-h-14 items-center justify-between gap-3 py-3 text-fg no-underline hover:text-crimson"><span class="type-h4">Getting started</span><svg class="flip-x size-5 shrink-0 text-crimson" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h17m-6-7 7 7-7 7" stroke="currentColor" stroke-width="1.75"/></svg></a></li>
+              <li class="border-t border-line sm:odd:pe-6"><a href="#enquiry" data-topic="instructors" class="group flex min-h-14 items-center justify-between gap-3 py-3 text-fg no-underline hover:text-crimson"><span class="type-h4">Instructors</span><svg class="flip-x size-5 shrink-0 text-crimson" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h17m-6-7 7 7-7 7" stroke="currentColor" stroke-width="1.75"/></svg></a></li>
+              <li class="border-t border-line sm:even:ps-6"><a href="#enquiry" data-topic="performance" class="group flex min-h-14 items-center justify-between gap-3 py-3 text-fg no-underline hover:text-crimson"><span class="type-h4">Performing &amp; showcases</span><svg class="flip-x size-5 shrink-0 text-crimson" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h17m-6-7 7 7-7 7" stroke="currentColor" stroke-width="1.75"/></svg></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         3 · SEND AN ENQUIRY — form on paper, heading column beside it
+         ================================================================ -->
+    <section id="enquiry" class="section-y bg-chalk pt-0" aria-labelledby="ct-form-title">
+      <div class="shell">
+        <div class="grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-12 lg:gap-8">
+
+          <div class="lg:col-span-4" data-reveal>
+            <h2 id="ct-form-title" class="type-h1">Send an <span class="accent-serif text-crimson">enquiry.</span></h2>
+            <p class="mt-5 max-w-[24rem] text-muted">All fields are required.</p>
+            <p class="mt-4 max-w-[24rem] border-s-2 border-warning ps-4 type-small text-muted">
+              <strong class="text-fg">Demonstration form.</strong> The studio's enquiry service isn't connected yet, so messages written here are checked but not sent.
+            </p>
+          </div>
+
+          <form id="enquiry-form" class="bg-paper p-5 sm:p-8 lg:col-span-7 lg:col-start-6" novalidate data-reveal>
+            <div id="form-status" class="form-status mb-6" tabindex="-1" hidden></div>
+
+            <div class="grid grid-cols-[minmax(0,1fr)] gap-6 sm:grid-cols-2">
+              <div>
+                <label class="field-label" for="f-name">Name</label>
+                <input class="field" id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-error" aria-invalid="false">
+                <p class="field-error" id="f-name-error" hidden><svg class="mt-0.5 size-4 shrink-0" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5v4.5M8 11v.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span data-msg></span></p>
+              </div>
+              <div>
+                <label class="field-label" for="f-email">Email</label>
+                <input class="field" id="f-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" required aria-describedby="f-email-error" aria-invalid="false">
+                <p class="field-error" id="f-email-error" hidden><svg class="mt-0.5 size-4 shrink-0" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5v4.5M8 11v.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span data-msg></span></p>
+              </div>
+              <div class="sm:col-span-2">
+                <label class="field-label" for="f-topic">Enquiry topic</label>
+                <select class="field" id="f-topic" name="topic" required aria-describedby="f-topic-error" aria-invalid="false">
+                  <option value="">Choose a topic</option>
+                  <option value="classes">Classes</option>
+                  <option value="starting">Getting started</option>
+                  <option value="instructors">Instructors</option>
+                  <option value="performance">Performing &amp; showcases</option>
+                  <option value="other">Something else</option>
+                </select>
+                <p class="field-error" id="f-topic-error" hidden><svg class="mt-0.5 size-4 shrink-0" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5v4.5M8 11v.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span data-msg></span></p>
+              </div>
+              <div class="sm:col-span-2">
+                <label class="field-label" for="f-message">Message</label>
+                <textarea class="field" id="f-message" name="message" rows="5" required aria-describedby="f-message-hint f-message-error" aria-invalid="false"></textarea>
+                <span class="field-hint" id="f-message-hint">Tell us a little about your experience and what you'd like to try.</span>
+                <p class="field-error" id="f-message-error" hidden><svg class="mt-0.5 size-4 shrink-0" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5v4.5M8 11v.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span data-msg></span></p>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg mt-8 w-full sm:w-auto">
+              Check &amp; send
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         4 · FIND THE STUDIO — interactive map (no pin: location unconfirmed)
+         ================================================================ -->
+    <section class="section-y bg-sand" aria-labelledby="ct-map-title">
+      <div class="shell">
+        <div class="grid grid-cols-[minmax(0,1fr)] gap-8 lg:grid-cols-12 lg:items-end lg:gap-8">
+          <div class="lg:col-span-4" data-reveal>
+            <p class="eyebrow text-crimson">Find the studio</p>
+            <h2 id="ct-map-title" class="type-h1 mt-6">Where to <span class="accent-serif text-crimson">find us.</span></h2>
+            <p class="mt-5 max-w-[24rem] border-s-2 border-crimson ps-4 text-muted">
+              The studio's exact location will be marked on this map once its address is confirmed. Until then, ask us for directions through the enquiry form.
+            </p>
+            <a href="#enquiry" data-topic="other" class="link-arrow mt-4">
+              Ask for directions
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+          </div>
+
+          <figure class="lg:col-span-8" data-reveal>
+            <div class="map-frame h-[clamp(18rem,45vw,28rem)] w-full overflow-hidden border border-fg">
+              <div id="studio-map" class="h-full w-full" role="region" aria-label="Interactive map. No studio location is marked yet."></div>
+              <div id="map-fallback" class="flex h-full items-center justify-center p-6 text-center text-muted" hidden>
+                <p>The map couldn't load. Please check your connection, or ask for directions through the enquiry form.</p>
+              </div>
+            </div>
+            <figcaption class="mt-2 type-caption text-muted">Drag to explore; use the + and − buttons to zoom. No location is marked yet.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         5 · BEFORE YOU REACH OUT — photo band + three useful pointers
+         ================================================================ -->
+    <section class="on-stage relative isolate overflow-hidden bg-stage" aria-labelledby="ct-before-title">
+      <div class="media absolute inset-0 -z-10">
+        <img
+          src="assets/images/contact/close-silks-cliff-800.jpg"
+          srcset="assets/images/contact/close-silks-cliff-800.jpg 800w, assets/images/contact/close-silks-cliff-1600.jpg 1600w"
+          sizes="100vw" width="1600" height="1045" alt=""
+          class="object-[70%_40%] opacity-45" loading="lazy" decoding="async">
+        <div class="absolute inset-0 bg-linear-to-r from-stage via-stage/90 to-stage/40 rtl:bg-linear-to-l" aria-hidden="true"></div>
+      </div>
+
+      <div class="shell section-y">
+        <div class="max-w-[42rem]" data-reveal>
+          <p class="eyebrow text-crimson-light">Before you reach out</p>
+          <h2 id="ct-before-title" class="type-h1 mt-6">A few things that <span class="accent-serif text-crimson-light">help.</span></h2>
+          <ol class="mt-8 space-y-4" role="list">
+            <li class="flex items-baseline gap-4 border-t border-stage-line pt-4"><span class="folio text-crimson-light" aria-hidden="true">i</span><p class="text-on-stage">Mention any aerial, dance or movement experience — or none at all.</p></li>
+            <li class="flex items-baseline gap-4 border-t border-stage-line pt-4"><span class="folio text-crimson-light" aria-hidden="true">ii</span><p class="text-on-stage">Say which apparatus or discipline you're curious about.</p></li>
+            <li class="flex items-baseline gap-4 border-y border-stage-line py-4"><span class="folio text-crimson-light" aria-hidden="true">iii</span><p class="text-on-stage">Let us know about any injuries or health questions you'd like to discuss.</p></li>
+          </ol>
+          <a href="#enquiry" class="btn btn-primary btn-lg mt-8">
+            Write your enquiry
+            <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

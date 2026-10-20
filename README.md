@@ -28,6 +28,8 @@ npm run watch    # rebuild on change while editing
 
 ```
 index.html                Home 1 — "the performance" (dark, theatrical)
+contact.html              Contact — five sections: Hero, Get in touch, Send an enquiry (demo form), Find the studio (Leaflet map), Before you reach out
+instructors.html          Instructors — five sections: Hero, Teaching philosophy, Guidance, The practice, Start a conversation
 classes.html              Classes — five sections: Hero, Ways to train, Learning journey, The practice, Start a conversation
 about.html                About — "the programme booklet": exactly five sections (Cover, Why we climb, Tension & Release, The practice, Curtain call)
 home-2.html               Home 2 — "the rehearsal room" (daylight studio); same business content, different art direction
@@ -35,8 +37,11 @@ src/input.css             Design tokens (@theme), light/dark theme tokens, share
 assets/css/styles.css     Compiled output — do not edit by hand
 assets/js/preferences.js  Theme (light/dark) + direction (ltr/rtl): saved choice, system fallback, applied before first paint
 assets/js/site-chrome.js  Shared <site-header> and <site-footer> for every public page
+assets/js/contact.js      Contact form validation (demo — nothing is sent) and Leaflet map; set STUDIO_LOCATION once the address is confirmed
 assets/js/home.js         Home page interactions (Home 1 discipline image reveal; scroll reveals on both homepages)
 assets/images/home-1/     Home 1 photography — all images stored locally at 800w and 1600w (see Image credits)
+assets/images/contact/    Contact photography, stored locally at 800w and 1600w
+assets/images/instructors/ Instructors photography, stored locally at 800w and 1600w
 assets/images/classes/    Classes photography, stored locally at 800w and 1600w (see Image credits)
 assets/images/about/      About photography, stored locally at 800w and 1600w (see Image credits)
 assets/images/home-2/     Home 2 photography, stored locally at 800w and 1600w (see Image credits)
@@ -77,7 +82,8 @@ Nav items and links live in one place: `NAV_ITEMS` / `HOME_MENU` / `LINKS` at th
 | Home 2 (`home-2.html`) | Built — awaiting review |
 | About (`about.html`) | Built — awaiting review |
 | Classes (`classes.html`) | Built — awaiting review |
-| Instructors, Contact | Not built — nav links point to their future filenames |
+| Instructors (`instructors.html`) | Built — awaiting review |
+| Contact (`contact.html`) | Built — awaiting review. Form is a labelled demonstration (no backend); map shows no studio pin |
 | Portal (`portal/index.html`), Dashboard (`portal/dashboard.html`) | Not built — header "Student login" and "Dashboard" links are ready for them |
 
 Links to unbuilt pages currently lead to a missing file; that is expected until each page is built.
@@ -110,6 +116,10 @@ These were removed from the public Home 1 page (no fake data, no editorial marke
 | Trial class and pricing | Final call to action | Not shown |
 | Differentiator copy ("Technique before height", etc.) | Studio section | Shown without a marker — proposed copy, confirm wording |
 | Studio photography | Whole page | Licensed stock (credited below); captions calling images "placeholder" were removed |
+| Studio address / map location | Contact: map | Neutral world view, no marker. Set `STUDIO_LOCATION` in `assets/js/contact.js` to add a pin |
+| Phone, email, opening hours, social links | Contact: Get in touch | Not shown; page says details will be listed once published |
+| Enquiry submission service | Contact: form | Form validates but does not send; it says so on submit and keeps the visitor's text |
+| Instructor names, portraits, biographies, qualifications | Instructors page | No profiles shown; "Meet the instructors" explains the role of guidance and says profiles will be shared soon |
 | Class names, formats offered, schedules, prices, durations, levels | Classes page | Not stated anywhere; "Ways to train" describes general formats and says "Ask us which are currently running" |
 | Booking | Closing CTA, hero CTA | Buttons read "Find your first class" and link to the planned `classes.html#beginner`; no booking is implied until Classes / portal exist |
 
@@ -229,3 +239,30 @@ Verified unique against Home 1, Home 2 and About (path and photo ID; no shared p
 | `formats-monochrome-stage` | 2 · Ways to train | [18823875](https://www.pexels.com/photo/black-and-white-photo-of-an-aerial-dancer-during-a-performance-18823875/) | serday-deviren |
 | `practice-purple-silks` | 4 · The practice (wide) | [8149895](https://www.pexels.com/photo/photo-of-an-acrobat-on-the-ropes-8149895/) | alissa-bonneville |
 | `practice-hoop-teal` | 4 · The practice (inset) | [40322823](https://www.pexels.com/photo/graceful-aerial-performer-on-lyra-hoop-40322823/) | angel-ruijano |
+
+### Instructors (`instructors.html`)
+
+Downloaded from Pexels into `assets/images/instructors/` under the [Pexels License](https://www.pexels.com/license/), at `-800.jpg` and `-1600.jpg`.
+Verified unique against Home 1, Home 2, About and Classes.
+
+| File (`assets/images/instructors/`) | Used in | Source (Pexels) | Photographer (Pexels username) |
+|---|---|---|---|
+| `hero-monochrome-hoop` | 1 · Hero (arch frame) | [10899160](https://www.pexels.com/photo/person-swinging-on-rope-10899160/) | sergey-platonov |
+| `guidance-watching-hoop` | 3 · Meet the instructors | [10039534](https://www.pexels.com/photo/woman-looking-at-gymnast-on-ring-10039534/) | cristian-rojas |
+| `practice-pink-hoop` | 4 · The practice (frame 01) | [37129661](https://www.pexels.com/photo/dynamic-aerial-hoop-performer-with-vibrant-lighting-37129661/) | psiconauta |
+| `practice-spotlight-hoop` | 4 · The practice (frame 03) | [35228140](https://www.pexels.com/photo/elegant-aerial-performer-in-spotlight-with-hoop-35228140/) | leticiacurveloph |
+
+### Contact (`contact.html`)
+
+Photos downloaded from Pexels into `assets/images/contact/` under the [Pexels License](https://www.pexels.com/license/), at `-800.jpg` and `-1600.jpg`.
+Verified unique against Home 1, Home 2, About, Classes and Instructors.
+
+| File (`assets/images/contact/`) | Used in | Source (Pexels) | Photographer (Pexels username) |
+|---|---|---|---|
+| `hero-hoop-sunset` | 1 · Hero (circle) | [20031006](https://www.pexels.com/photo/aerial-dance-on-a-beach-20031006/) | moralestorres98 |
+| `close-silks-cliff` | 5 · Before you reach out (background) | [17507565](https://www.pexels.com/photo/view-of-woman-aerial-dancing-on-the-background-of-a-cliff-17507565/) | ktccphotography |
+
+**Map:** [Leaflet](https://leafletjs.com/) 1.9.4 from cdnjs (pinned with Subresource Integrity) with
+[OpenStreetMap](https://www.openstreetmap.org/copyright) standard tiles — no API key. Attribution is shown on the map.
+OSM's tile usage policy requires a valid Referer, which a deployed site sends; opening the file directly from disk may not.
+For high traffic, switch to a dedicated tile provider.
