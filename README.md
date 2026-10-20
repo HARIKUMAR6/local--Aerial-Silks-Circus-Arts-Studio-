@@ -35,6 +35,7 @@ assets/css/styles.css     Compiled output — do not edit by hand
 assets/js/preferences.js  Theme (light/dark) + direction (ltr/rtl): saved choice, system fallback, applied before first paint
 assets/js/site-chrome.js  Shared <site-header> and <site-footer> for every public page
 assets/js/home.js         Home page interactions (Home 1 discipline image reveal; scroll reveals on both homepages)
+assets/images/home-1/     Home 1 local photography (discipline images); other Home 1 images load from Unsplash
 assets/images/about/      About photography, stored locally at 800w and 1600w (see Image credits)
 assets/images/home-2/     Home 2 photography, stored locally at 800w and 1600w (see Image credits)
 ```
@@ -80,7 +81,9 @@ Links to unbuilt pages currently lead to a missing file; that is expected until 
 
 ## Placeholder register
 
-Everything below is shown on the site as a visible dashed **TBC** marker or in `[brackets]` until the studio supplies it.
+Home 2 and About show the items below as visible dashed **TBC** / **Proposed** markers until the studio supplies them.
+**Home 1 is public-facing:** it shows no editorial placeholders. Its open items are tracked in
+[Home 1 — awaiting studio confirmation](#home-1--awaiting-studio-confirmation) instead.
 
 | Item | Where |
 |---|---|
@@ -96,13 +99,29 @@ Everything below is shown on the site as a visible dashed **TBC** marker or in `
 | Timetable | Home 2: booking rows |
 | Address, opening hours, phone, email, social channels | Footer |
 | Privacy policy, terms | Footer |
-| Confirmed disciplines (Hoop and Trapeze are *proposed*; others TBC) | Home 1: discipline index · Home 2: apparatus tiles |
-| Level descriptions and prerequisites | Home 1 & 2: training path |
-| Safety approach (rigging, mats, spotting, class sizes) | Home 1: training · Home 2: coaching checklist |
-| Showcase name, date, venue, eligibility | Home 1: performance · Home 2: showcase poster |
-| Student or instructor quote | Home 1 & 2: community |
-| Trial class and pricing | Home 1: final call to action · Home 2: booking rows |
-| Differentiator copy ("Technique before height", etc.) | Home 1: studio section · Home 2: "What we stand for" — proposed copy |
+| Confirmed disciplines (Hoop and Trapeze are *proposed*; others TBC) | Home 2: apparatus tiles |
+| Level descriptions and prerequisites | Home 2: training path |
+| Safety approach (rigging, mats, spotting, class sizes) | Home 2: coaching checklist |
+| Showcase name, date, venue, eligibility | Home 2: showcase poster |
+| Student or instructor quote | Home 2: community |
+| Trial class and pricing | Home 2: booking rows |
+| Differentiator copy ("Technique before height", etc.) | Home 2: "What we stand for" — proposed copy |
+
+### Home 1 — awaiting studio confirmation
+
+These were removed from the public Home 1 page (no fake data, no editorial markers). Confirm or supply them, then add them back:
+
+| Item | Home 1 location | What the page shows now |
+|---|---|---|
+| Whether Aerial Hoop and Trapeze are offered | Disciplines | Customer-facing badge "Availability to be confirmed" |
+| Any further circus disciplines | Disciplines | Row removed (was "More disciplines — TBC") |
+| Level descriptions and prerequisites | Training path | The three level descriptions are proposed copy — confirm wording; prerequisites not shown |
+| Safety approach: rigging inspections, crash mats, spotting, class sizes, instructor credentials | Training — "Safety on the rig" | Invitation to ask before booking, linking to Contact; no claims |
+| Upcoming showcase: name, date, venue, eligibility | Performance | "On the night: Costume · Lights · Audience" + "Ask us about upcoming opportunities to perform" |
+| A real student or instructor quote (with permission) | Community | Brand line "Strength is easier to find in good company." — proposed copy, not a testimonial |
+| Trial class and pricing | Final call to action | Not shown |
+| Differentiator copy ("Technique before height", etc.) | Studio section | Shown without a marker — proposed copy, confirm wording |
+| Studio photography | Whole page | Licensed stock (credited below); captions calling images "placeholder" were removed |
 
 ## Image credits (placeholder photography)
 
@@ -122,14 +141,20 @@ All images are hotlinked from Unsplash under the [Unsplash License](https://unsp
 | Hero | [Aerial silks performance on dark stage](https://unsplash.com/photos/n4KiW-TFerI) | Ahmad Odeh |
 | Studio section | [Two aerialists perform gracefully on a hoop](https://unsplash.com/photos/z4B542l9eS4) | Jayanth Muppaneni |
 | Disciplines — Silks | [Performer on red aerial silks](https://unsplash.com/photos/oF82bSqzuUY) | Igor Savelev |
-| Disciplines — Hoop | [Aerial hoop routine against dark background](https://unsplash.com/photos/_hbvf9JwSSQ) | Mango Gong |
-| Disciplines — Trapeze | [Silhouette of a trapeze artist](https://unsplash.com/photos/lTv2oYFaAmE) | Maya Alexa G. Romero |
 | Training (main) | [Aerial routine with instructors watching](https://unsplash.com/photos/WLWnKV5egzg) | Centre for Ageing Better |
 | Training (inset) | [Two women in a gymnasium with trapeze equipment](https://unsplash.com/photos/D_IUynjnR5Y) | Centre for Ageing Better |
 | Performance | [Two acrobats performing aerial silks routine](https://unsplash.com/photos/r9wTQj27p8o) | Gerardo Martin Fernandez Vallejo |
 | Community (wide) | [Two acrobats perform on a stage with abstract lights](https://unsplash.com/photos/J6ctfElqfqk) | Gerardo Martin Fernandez Vallejo |
 | Community (tall) | [Acrobats perform on red aerial silks](https://unsplash.com/photos/IzsR6qr8Rb0) | Gerardo Martin Fernandez Vallejo |
 | Community (small) | [Woman performing aerial acrobatics on trapeze rings](https://unsplash.com/photos/I_UWkXYFenY) | Centre for Ageing Better |
+
+**Home 1 local images** — `assets/images/home-1/`, from Pexels under the [Pexels License](https://www.pexels.com/license/), at `-800.jpg` and `-1600.jpg`.
+They replaced two Unsplash images whose subjects were too small to read (a distant hoop; an outdoor flying-trapeze rig).
+
+| File (`assets/images/home-1/`) | Used in | Source (Pexels) | Photographer (Pexels username) |
+|---|---|---|---|
+| `discipline-hoop` | Disciplines — Aerial Hoop | [35333247](https://www.pexels.com/photo/aerial-acrobat-performing-on-suspended-hoop-35333247/) | jesus-marchante |
+| `discipline-trapeze` | Disciplines — Trapeze | [35017410](https://www.pexels.com/photo/dramatic-aerial-acrobat-performing-trapeze-act-35017410/) | lau-arraigada |
 
 ### Home 2 (`home-2.html`)
 
