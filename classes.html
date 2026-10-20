@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Classes — Aerial Silks &amp; Circus Arts Studio (temporary name)</title>
+  <meta name="description" content="Learning aerial arts: ways to train, the learning journey from first climb to refined technique, and what aerial practice feels like.">
+  <meta name="theme-color" content="#16120f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%2316120f'/%3E%3Ccircle cx='20' cy='4' r='2.4' fill='%23ff5a1f'/%3E%3Cpath d='M20 6.5C27 11 27 16 20 20.5S10 28 9 38' fill='none' stroke='%23f2ece3' stroke-width='2.75' stroke-linecap='round'/%3E%3Cpath d='M20 6.5C13 11 13 16 20 20.5S30 28 31 38' fill='none' stroke='%23e8566b' stroke-width='2.75' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Instrument+Serif:ital@1&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preload" as="image" href="assets/images/classes/hero-red-silks-sky-800.jpg"
+        imagesrcset="assets/images/classes/hero-red-silks-sky-800.jpg 800w, assets/images/classes/hero-red-silks-sky-1600.jpg 1600w"
+        imagesizes="(min-width: 1024px) 42vw, 100vw">
+
+  <!-- Applies the saved / system theme and direction before first paint -->
+  <script src="assets/js/preferences.js"></script>
+  <script src="assets/js/site-chrome.js" defer></script>
+  <!-- Shared scroll reveals (reduced-motion aware) -->
+  <script src="assets/js/home.js" defer></script>
+</head>
+
+<!--
+  CLASSES — five sections: Hero · Ways to train · Learning journey · The practice · Start a conversation.
+  No class names, prices, schedules, durations, levels or availability are stated: none are confirmed.
+  Photography is local (assets/images/classes/), used on no other page, and is licensed stock.
+-->
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <site-header current="classes">
+    <noscript>
+      <nav aria-label="Main" class="on-stage bg-stage px-4 py-3">
+        <a href="index.html">Home 1</a> · <a href="home-2.html">Home 2</a> · <a href="about.html">About</a> ·
+        <a href="classes.html" aria-current="page">Classes</a> · <a href="instructors.html">Instructors</a> · <a href="contact.html">Contact</a> ·
+        <a href="portal/dashboard.html">Dashboard</a> · <a href="portal/index.html">Student login</a>
+      </nav>
+    </noscript>
+  </site-header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ================================================================
+         1 · HERO — edge-bleed photo on the inline-start side, headline on the end side
+         ================================================================ -->
+    <section class="hero-fit relative bg-chalk lg:flex" aria-labelledby="cl-hero-title">
+      <figure class="media aspect-[4/5] sm:aspect-[4/3] lg:absolute lg:inset-y-0 lg:start-0 lg:aspect-auto lg:w-[42%]">
+        <img
+          src="assets/images/classes/hero-red-silks-sky-800.jpg"
+          srcset="assets/images/classes/hero-red-silks-sky-800.jpg 800w, assets/images/classes/hero-red-silks-sky-1600.jpg 1600w"
+          sizes="(min-width: 1024px) 42vw, 100vw"
+          width="1600" height="2000"
+          alt="An aerialist hangs upside down in a red silk against a bright blue sky."
+          class="object-[50%_70%] lg:object-[50%_40%]" fetchpriority="high">
+      </figure>
+
+      <div class="shell flex py-10 sm:py-14 lg:items-center lg:py-[clamp(2rem,6svh,4rem)]">
+        <div class="lg:ms-[46%] lg:w-[54%]" data-reveal>
+          <p class="eyebrow text-crimson">Classes · Aerial arts</p>
+          <h1 id="cl-hero-title" class="type-display hero-title-fit mt-5 max-w-[12ch]">
+            Find your way into the <span class="accent-serif text-crimson">air.</span>
+          </h1>
+          <p class="type-lead mt-6 max-w-[32rem] text-muted">
+            Explore aerial arts at your own pace — building strength, control and the confidence to move off the ground.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <a href="#ways" class="btn btn-primary btn-lg">
+              Explore classes
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+            <p class="eyebrow text-muted">Strength · Control · Expression</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         2 · WAYS TO TRAIN — tall photo + a stepped "staircase" of formats
+         ================================================================ -->
+    <section id="ways" class="section-y bg-sand" aria-labelledby="cl-ways-title">
+      <div class="shell">
+        <div class="grid grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-12 lg:gap-8">
+
+          <figure class="hidden lg:col-span-4 lg:flex lg:self-stretch" data-reveal>
+            <div class="media aspect-[2/3] lg:aspect-auto lg:min-h-[32rem] lg:flex-1">
+              <img
+                src="assets/images/classes/formats-monochrome-stage-800.jpg"
+                srcset="assets/images/classes/formats-monochrome-stage-800.jpg 800w, assets/images/classes/formats-monochrome-stage-1600.jpg 1600w"
+                sizes="30vw" width="1600" height="2400"
+                alt="Black-and-white photo of an aerialist balancing in silks on a darkened stage."
+                class="object-[50%_40%]" loading="lazy" decoding="async">
+            </div>
+          </figure>
+
+          <div class="lg:col-span-7 lg:col-start-6">
+            <div data-reveal>
+              <p class="eyebrow text-crimson">Ways to train</p>
+              <h2 id="cl-ways-title" class="type-h1 mt-6">
+                Three ways <span class="accent-serif text-crimson">in.</span>
+              </h2>
+              <p class="mt-5 max-w-[34rem] text-muted">Aerial arts are usually learned through a mix of formats. Ask us which are currently running.</p>
+            </div>
+
+            <ul class="mt-10 space-y-8 lg:mt-12" role="list">
+              <li class="border-t-2 border-fg pt-5" data-reveal>
+                <h3 class="type-h2">First steps</h3>
+                <p class="mt-2 max-w-[30rem] text-muted">An introduction to the fabric: grip, simple climbs and positions close to the floor.</p>
+              </li>
+              <li class="border-t-2 border-fg pt-5 sm:ms-12 lg:ms-20" data-reveal>
+                <h3 class="type-h2">Skill building</h3>
+                <p class="mt-2 max-w-[30rem] text-muted">Ongoing practice that adds new moves and links them into sequences.</p>
+              </li>
+              <li class="border-t-2 border-crimson pt-5 sm:ms-24 lg:ms-40" data-reveal>
+                <h3 class="type-h2">Guided <span class="accent-serif text-crimson">practice</span></h3>
+                <p class="mt-2 max-w-[30rem] text-muted">Time on the apparatus to repeat, refine and ask questions as you go.</p>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         3 · YOUR LEARNING JOURNEY — dark band, three stages joined by arrows
+         ================================================================ -->
+    <section id="journey" class="on-stage section-y bg-stage" aria-labelledby="cl-journey-title">
+      <div class="shell">
+        <div class="max-w-[40rem]" data-reveal>
+          <p class="eyebrow text-crimson-light">Your learning journey</p>
+          <h2 id="cl-journey-title" class="type-h1 mt-6">
+            Every climber moves <span class="accent-serif text-crimson-light">through three stages.</span>
+          </h2>
+        </div>
+
+        <ol class="mt-12 grid grid-cols-[minmax(0,1fr)] gap-y-4 lg:mt-14 lg:grid-cols-[1fr_auto_1fr_auto_1fr] lg:gap-x-6" role="list">
+          <li id="beginner" class="border-t border-stage-line pt-6" data-reveal>
+            <p class="folio text-crimson-light" aria-hidden="true">i</p>
+            <h3 class="mt-2 text-[clamp(2.75rem,1.8rem+3.5vw,5rem)] font-black uppercase leading-[0.9] [font-stretch:62%]">Discover</h3>
+            <p class="mt-4 max-w-[22rem] text-on-stage-muted">Meet the apparatus. Learn how to grip, hold and move safely near the ground.</p>
+          </li>
+          <li class="flex justify-center py-2 text-crimson-light lg:items-start lg:pt-16" aria-hidden="true">
+            <svg class="flip-x hidden size-10 lg:block" viewBox="0 0 24 24" fill="none"><path d="M3 12h17m-6-7 7 7-7 7" stroke="currentColor" stroke-width="1.5"/></svg>
+            <svg class="size-8 lg:hidden" viewBox="0 0 24 24" fill="none"><path d="M12 3v17m-7-6 7 7 7-7" stroke="currentColor" stroke-width="1.5"/></svg>
+          </li>
+          <li class="border-t border-stage-line pt-6" data-reveal>
+            <p class="folio text-crimson-light" aria-hidden="true">ii</p>
+            <h3 class="mt-2 text-[clamp(2.75rem,1.8rem+3.5vw,5rem)] font-black uppercase leading-[0.9] [font-stretch:62%]">Develop</h3>
+            <p class="mt-4 max-w-[22rem] text-on-stage-muted">Add new moves, build strength and start linking skills together.</p>
+          </li>
+          <li class="flex justify-center py-2 text-crimson-light lg:items-start lg:pt-16" aria-hidden="true">
+            <svg class="flip-x hidden size-10 lg:block" viewBox="0 0 24 24" fill="none"><path d="M3 12h17m-6-7 7 7-7 7" stroke="currentColor" stroke-width="1.5"/></svg>
+            <svg class="size-8 lg:hidden" viewBox="0 0 24 24" fill="none"><path d="M12 3v17m-7-6 7 7 7-7" stroke="currentColor" stroke-width="1.5"/></svg>
+          </li>
+          <li class="border-t-2 border-crimson-light pt-6" data-reveal>
+            <p class="folio text-crimson-light" aria-hidden="true">iii</p>
+            <h3 class="mt-2 font-serif text-[clamp(3rem,2rem+3.8vw,5.5rem)] italic leading-[0.9] text-crimson-light">Refine</h3>
+            <p class="mt-4 max-w-[22rem] text-on-stage-muted">Polish technique and flow, and explore your own way of moving.</p>
+          </li>
+        </ol>
+
+        <p class="mt-12 max-w-[34rem] type-small text-on-stage-muted">Everyone progresses at their own pace — there is no set timeline for moving between stages.</p>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         4 · THE PRACTICE — wide photo with an overlapping portrait inset,
+             qualities set as a typographic row beneath
+         ================================================================ -->
+    <section class="section-y bg-chalk" aria-labelledby="cl-practice-title">
+      <div class="shell">
+        <div class="grid grid-cols-[minmax(0,1fr)] gap-6 md:grid-cols-12 md:items-end" data-reveal>
+          <h2 id="cl-practice-title" class="type-h1 md:col-span-7">
+            The <span class="accent-serif text-crimson">practice.</span>
+          </h2>
+          <p class="text-muted md:col-span-5 lg:col-span-4 lg:col-start-9">What aerial training feels like: slow, repeatable work that turns effort into movement.</p>
+        </div>
+
+        <div class="relative mt-10 pb-24 sm:pb-32 lg:mt-14 lg:pb-0">
+          <figure class="media aspect-[3/2] lg:aspect-[21/9] lg:w-[82%]" data-reveal>
+            <img
+              src="assets/images/classes/practice-purple-silks-800.jpg"
+              srcset="assets/images/classes/practice-purple-silks-800.jpg 800w, assets/images/classes/practice-purple-silks-1600.jpg 1600w"
+              sizes="(min-width: 1024px) 70vw, 100vw"
+              width="1600" height="1070"
+              alt="An aerialist stretches into a split between two purple silks hung from a steel frame outdoors."
+              class="object-[50%_40%]" loading="lazy" decoding="async">
+          </figure>
+          <figure class="media absolute bottom-0 end-0 aspect-[3/4] w-[42%] border-[6px] border-chalk sm:w-[34%] sm:border-8 lg:end-0 lg:top-1/2 lg:bottom-auto lg:w-[24%] lg:-translate-y-1/3" data-reveal>
+            <img
+              src="assets/images/classes/practice-hoop-teal-800.jpg"
+              srcset="assets/images/classes/practice-hoop-teal-800.jpg 800w, assets/images/classes/practice-hoop-teal-1600.jpg 1600w"
+              sizes="(min-width: 1024px) 24vw, 40vw"
+              width="1600" height="2416"
+              alt="An aerialist hangs inverted from a hoop in front of a teal stage curtain."
+              class="object-[50%_35%]" loading="lazy" decoding="async">
+          </figure>
+        </div>
+
+        <ul class="mt-12 grid grid-cols-[minmax(0,1fr)] gap-8 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4" role="list" data-reveal>
+          <li class="border-t border-fg pt-4">
+            <h3 class="type-h4">Body awareness</h3>
+            <p class="mt-2 type-small text-muted">Knowing where every limb is, even upside down.</p>
+          </li>
+          <li class="border-t border-fg pt-4">
+            <h3 class="type-h4">Coordination</h3>
+            <p class="mt-2 type-small text-muted">Hands, feet and fabric working in sequence.</p>
+          </li>
+          <li class="border-t border-fg pt-4">
+            <h3 class="type-h4">Expression</h3>
+            <p class="mt-2 type-small text-muted">Finding shape, line and a way of moving that is yours.</p>
+          </li>
+          <li class="border-t border-crimson pt-4">
+            <h3 class="type-h4">Deliberate repetition</h3>
+            <p class="mt-2 type-small text-muted">Small moves, repeated well, before anything new.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         5 · START A CONVERSATION — dark close, oversized question
+         ================================================================ -->
+    <section class="on-stage section-y relative overflow-hidden bg-stage" aria-labelledby="cl-close-title">
+      <div class="shell">
+        <div class="grid grid-cols-[minmax(0,1fr)] gap-10 border-t-4 border-crimson-light pt-10 lg:grid-cols-12 lg:items-end lg:gap-8 lg:pt-14" data-reveal>
+          <h2 id="cl-close-title" class="type-statement lg:col-span-8">
+            Ready to <span class="accent-serif text-crimson-light">explore?</span>
+          </h2>
+          <div class="lg:col-span-4">
+            <p class="type-lead text-on-stage-muted">Tell us about your experience and what you'd like to try. We'll point you to a good place to start.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg mt-8">
+              Get in touch
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

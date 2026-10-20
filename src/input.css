@@ -191,8 +191,18 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
   letter-spacing: -0.01em;
   overflow-wrap: anywhere;
 }
-@utility type-h1 {
+/* Hero-adjacent closing statements: larger than section headings, below the hero H1 */
+@utility type-statement {
   font-size: clamp(2.75rem, 1.8rem + 4.5vw, 6rem);
+  line-height: 0.9;
+  font-weight: 900;
+  font-stretch: 62%;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+/* Section headings */
+@utility type-h1 {
+  font-size: clamp(2.5rem, 1.6rem + 3.4vw, 4.5rem);
   line-height: 0.92;
   font-weight: 850;
   font-stretch: 62%;
@@ -200,7 +210,7 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
   overflow-wrap: anywhere;
 }
 @utility type-h2 {
-  font-size: clamp(2rem, 1.4rem + 2.8vw, 3.75rem);
+  font-size: clamp(1.875rem, 1.3rem + 2.3vw, 3.25rem);
   line-height: 1;
   font-weight: 800;
   font-stretch: 68%;
@@ -273,7 +283,26 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
   padding-inline: var(--gutter-x);
 }
 @utility section-y {
-  padding-block: clamp(4rem, 2rem + 8vw, 10rem);
+  padding-block: clamp(3.5rem, 1.75rem + 4.5vw, 7rem);
+}
+/* Inner-page hero: fills the first screen below the solid header on desktop,
+   capped so it never sprawls; below lg it keeps its natural height. */
+@utility hero-fit {
+  @media (width >= 64rem) {
+    min-height: min(calc(100svh - var(--header-h)), 60rem);
+  }
+}
+/* Same first-screen height for a hero that sits under a transparent (overlay) header */
+@utility hero-fit-overlay {
+  @media (width >= 64rem) {
+    min-height: min(100svh, calc(60rem + var(--header-h)));
+  }
+}
+/* Hero H1 on desktop: also scales with viewport height so short screens never overflow */
+@utility hero-title-fit {
+  @media (width >= 64rem) {
+    font-size: min(clamp(3.5rem, 2rem + 7vw, 9rem), 14svh);
+  }
 }
 @utility section-y-compact {
   padding-block: clamp(2.5rem, 1.5rem + 4vw, 5rem);

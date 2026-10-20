@@ -47,18 +47,18 @@
     <!-- ================================================================
          1 · HERO — daylight, full-width headline over a three-photo strip
          ================================================================ -->
-    <section class="bg-chalk" aria-labelledby="h2-hero-title">
-      <div class="shell pt-10 sm:pt-14 lg:pt-16">
+    <section class="hero-fit bg-chalk lg:flex lg:flex-col" aria-labelledby="h2-hero-title">
+      <div class="shell pt-10 sm:pt-14 lg:pt-[clamp(1.5rem,4svh,3rem)]">
         <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-b border-fg pb-4">
           <p class="eyebrow text-crimson">Aerial silks &amp; circus arts studio</p>
           <p class="eyebrow text-muted">Beginner · Intermediate · Advanced</p>
         </div>
 
-        <h1 id="h2-hero-title" class="type-display mt-8 sm:mt-10" data-reveal>
+        <h1 id="h2-hero-title" class="type-display hero-title-fit mt-8 sm:mt-10 lg:mt-[clamp(1rem,3svh,2rem)]" data-reveal>
           The air is your <span class="accent-serif text-crimson">studio.</span>
         </h1>
 
-        <div class="mt-8 grid gap-8 md:grid-cols-12 md:items-end lg:mt-12" data-reveal>
+        <div class="mt-8 grid gap-8 md:grid-cols-12 md:items-end lg:mt-[clamp(1rem,3svh,2rem)]" data-reveal>
           <p class="type-lead text-muted md:col-span-7 lg:col-span-6">
             Learn aerial silks and circus arts with coaching that builds real strength — and the freedom to move in your own way.
           </p>
@@ -73,7 +73,7 @@
       </div>
 
       <!-- Photo strip: three shapes, one height; bleeds to the screen edges -->
-      <div class="mt-12 grid grid-cols-2 gap-2 sm:gap-3 lg:mt-16 lg:h-[clamp(26rem,38vw,36rem)] lg:grid-cols-12" data-reveal>
+      <div class="mt-12 grid grid-cols-2 gap-2 sm:gap-3 lg:mt-[clamp(1.5rem,4svh,3rem)] lg:min-h-[14rem] lg:flex-1 lg:grid-cols-12" data-reveal>
         <figure class="media col-span-2 aspect-[4/3] lg:col-span-5 lg:aspect-auto">
           <img
             src="assets/images/home-2/hero-inverted-white-silk-800.jpg"
@@ -102,9 +102,6 @@
             class="object-[55%_45%]" loading="lazy" decoding="async">
         </figure>
       </div>
-      <div class="shell">
-        <p class="py-4 type-caption text-muted">Placeholder photography — to be replaced with the studio's own images.</p>
-      </div>
     </section>
 
     <!-- ================================================================
@@ -122,7 +119,7 @@
           </p>
         </div>
 
-        <div class="mt-12 grid border-y border-fg md:grid-cols-2 lg:mt-16" data-reveal>
+        <div class="mt-10 grid border-y border-fg md:grid-cols-2 lg:mt-12" data-reveal>
           <div class="py-8 md:pe-10 md:py-10">
             <p class="type-h1 [font-stretch:62%]" aria-hidden="true">Strength</p>
             <h3 class="sr-only">Strength</h3>
@@ -143,9 +140,8 @@
           </div>
         </div>
 
-        <div class="mt-12 lg:mt-16" data-reveal>
-          <p class="text-center"><span class="ph">Proposed copy — confirm with studio</span></p>
-          <ol class="mt-6 grid gap-8 md:grid-cols-3 md:gap-0" role="list">
+        <div class="mt-10 lg:mt-12" data-reveal>
+          <ol class="grid gap-8 md:grid-cols-3 md:gap-0" role="list">
             <li class="md:pe-8">
               <span class="block font-serif text-[clamp(3rem,2rem+3vw,4.5rem)] italic leading-none text-crimson" aria-hidden="true">1</span>
               <h3 class="type-h4 mt-3">Technique before height</h3>
@@ -167,7 +163,7 @@
     </section>
 
     <!-- ================================================================
-         3 · THE APPARATUS — one feature tile + two dashed "proposed" tiles
+         3 · THE APPARATUS — one feature tile + two dashed tiles (availability to be confirmed)
          ================================================================ -->
     <section id="apparatus" class="section-y bg-chalk" aria-labelledby="h2-apparatus-title">
       <div class="shell">
@@ -179,14 +175,14 @@
             </h2>
           </div>
           <p class="text-muted md:col-span-4">
-            Aerial Silks is the studio's core discipline. Other apparatus are proposed and will be confirmed by the studio.
+            Aerial Silks is the studio's core discipline. Ask us about hoop and trapeze.
           </p>
         </div>
 
         <div class="mt-12 grid gap-4 lg:mt-16 lg:grid-cols-12 lg:gap-6">
 
           <!-- Feature: Aerial Silks (confirmed) -->
-          <article class="flex flex-col bg-paper lg:col-span-7 lg:row-span-3" aria-labelledby="h2-silks" data-reveal>
+          <article class="flex flex-col bg-paper lg:col-span-7 lg:row-span-2" aria-labelledby="h2-silks" data-reveal>
             <div class="media aspect-[16/10] lg:aspect-auto lg:min-h-[22rem] lg:flex-1">
               <img
                 src="assets/images/home-2/apparatus-silks-studio-800.jpg"
@@ -219,7 +215,7 @@
                 class="object-[50%_35%]" loading="lazy" decoding="async">
             </div>
             <div class="flex flex-col justify-center">
-              <span class="badge badge-proposed self-start whitespace-normal">Proposed — to be confirmed</span>
+              <span class="badge badge-proposed self-start whitespace-normal">Availability to be confirmed</span>
               <h3 id="h2-hoop" class="type-h3 mt-3">Aerial Hoop</h3>
               <p class="mt-2 type-small text-muted">Strength, balance and shape-making in and around a suspended steel ring, also called lyra.</p>
             </div>
@@ -235,17 +231,11 @@
                 class="object-[45%_55%]" loading="lazy" decoding="async">
             </div>
             <div class="flex flex-col justify-center">
-              <span class="badge badge-proposed self-start whitespace-normal">Proposed — to be confirmed</span>
+              <span class="badge badge-proposed self-start whitespace-normal">Availability to be confirmed</span>
               <h3 id="h2-trapeze" class="type-h3 mt-3">Trapeze</h3>
               <p class="mt-2 type-small text-muted">Holds, balances and swings on a bar hung from two ropes.</p>
             </div>
           </article>
-
-          <!-- Unconfirmed -->
-          <div class="flex flex-wrap items-center justify-between gap-3 border border-dashed border-line-strong px-4 py-5 lg:col-span-5" data-reveal>
-            <span class="type-h5 text-muted">More disciplines</span>
-            <span class="ph">Further circus disciplines — TBC</span>
-          </div>
         </div>
       </div>
     </section>
@@ -267,7 +257,7 @@
           </p>
         </div>
 
-        <div class="relative mt-12 lg:mt-20">
+        <div class="relative mt-10 lg:mt-14">
           <!-- The path: a horizontal rule joining the three level markers (desktop) -->
           <span class="pointer-events-none absolute inset-x-0 top-[7px] hidden h-px bg-fg lg:block" aria-hidden="true"></span>
 
@@ -280,7 +270,7 @@
               </div>
               <h3 class="type-h2 mt-2 md:max-lg:text-[clamp(1.75rem,0.9rem+2.2vw,2.25rem)]">Beginner</h3>
               <p class="mt-2 text-muted">For first-timers. Build grip strength, basic climbs and foundational positions, working close to the floor.</p>
-              <figure class="media mt-6 aspect-[4/3] lg:mt-28">
+              <figure class="media mt-6 aspect-[4/3] lg:mt-14">
                 <img
                   src="assets/images/home-2/path-beginner-floor-800.jpg"
                   srcset="assets/images/home-2/path-beginner-floor-800.jpg 800w, assets/images/home-2/path-beginner-floor-1600.jpg 1600w"
@@ -298,7 +288,7 @@
               </div>
               <h3 class="type-h2 mt-2 md:max-lg:text-[clamp(1.75rem,0.9rem+2.2vw,2.25rem)]">Intermediate</h3>
               <p class="mt-2 text-muted">Link skills into sequences, add inversions from the air and begin working at height.</p>
-              <figure class="media mt-6 aspect-[4/3] lg:mt-16">
+              <figure class="media mt-6 aspect-[4/3] lg:mt-7">
                 <img
                   src="assets/images/home-2/path-intermediate-split-800.jpg"
                   srcset="assets/images/home-2/path-intermediate-split-800.jpg 800w, assets/images/home-2/path-intermediate-split-1600.jpg 1600w"
@@ -330,7 +320,6 @@
         </div>
 
         <div class="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-6">
-          <span class="ph">Proposed level descriptions — prerequisites TBC</span>
           <a href="classes.html" class="link-arrow">
             See classes by level
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
@@ -340,54 +329,40 @@
     </section>
 
     <!-- ================================================================
-         5 · COACHED ON EVERY CLIMB — instructors + safety (placeholder photo)
+         5 · COACHED ON EVERY CLIMB — text-led: statement + questions to ask
          ================================================================ -->
     <section class="section-y bg-sand" aria-labelledby="h2-coach-title">
       <div class="shell">
-        <div class="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-12">
+        <div class="grid grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-12 lg:items-end lg:gap-8">
 
-          <!-- Neutral placeholder: no suitable licensed photo of silks instruction was found -->
-          <figure class="relative flex aspect-[4/3] flex-col items-center justify-center gap-4 border border-dashed border-line-strong bg-paper p-6 pb-10 text-center sm:pb-16 lg:pb-6 lg:col-span-7 lg:col-start-1 lg:row-start-1 lg:aspect-[4/3]" data-reveal>
-            <svg class="size-16 text-muted" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-              <circle cx="20" cy="4" r="2.4" fill="currentColor"/>
-              <path d="M20 6.5C27 11 27 16 20 20.5S10 28 9 38" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M20 6.5C13 11 13 16 20 20.5S30 28 31 38" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/>
-            </svg>
-            <figcaption class="max-w-[30ch]">
-              <span class="eyebrow block text-muted">Photo needed</span>
-              <span class="type-h5 mt-2 block">An instructor coaching a student on aerial silks</span>
-              <span class="mt-2 block type-small text-muted">Daylight studio photograph, to be supplied by the studio.</span>
-              <span class="ph mt-4">Studio photography — TBC</span>
-            </figcaption>
-          </figure>
-
-          <!-- Overlapping text panel -->
-          <div class="relative z-10 -mt-4 me-0 ms-4 bg-chalk p-6 shadow-[0_12px_32px_rgb(0_0_0/0.12)] sm:-mt-16 sm:ms-12 sm:p-8 lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:my-16 lg:ms-0 lg:self-center lg:p-10" data-reveal>
+          <div class="lg:col-span-7" data-reveal>
             <p class="eyebrow text-crimson">Instructor-led</p>
-            <h2 id="h2-coach-title" class="type-h1 mt-5">
+            <h2 id="h2-coach-title" class="type-h1 mt-6 max-w-[14ch]">
               Coached on every <span class="accent-serif text-crimson">climb.</span>
             </h2>
-            <p class="mt-5 text-muted">
+            <p class="type-lead mt-6 max-w-[34rem] text-muted">
               Classes are led by instructors who teach technique step by step and watch your form as you progress.
             </p>
-
-            <h3 class="type-h5 mt-8">Safety on the rig</h3>
-            <ul class="mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2" role="list">
-              <li class="flex items-start gap-3"><span class="mt-1 size-4 shrink-0 rounded-full border-2 border-dashed border-line-strong" aria-hidden="true"></span><span>Rigging inspections <span class="sr-only">(details to be confirmed)</span></span></li>
-              <li class="flex items-start gap-3"><span class="mt-1 size-4 shrink-0 rounded-full border-2 border-dashed border-line-strong" aria-hidden="true"></span><span>Crash mats <span class="sr-only">(details to be confirmed)</span></span></li>
-              <li class="flex items-start gap-3"><span class="mt-1 size-4 shrink-0 rounded-full border-2 border-dashed border-line-strong" aria-hidden="true"></span><span>Spotting <span class="sr-only">(details to be confirmed)</span></span></li>
-              <li class="flex items-start gap-3"><span class="mt-1 size-4 shrink-0 rounded-full border-2 border-dashed border-line-strong" aria-hidden="true"></span><span>Class sizes <span class="sr-only">(details to be confirmed)</span></span></li>
-            </ul>
-            <p class="mt-4"><span class="ph">Safety approach — details TBC</span></p>
-
-            <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-              <a href="instructors.html" class="link-arrow">
-                Meet the instructors
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
-              </a>
-              <span class="ph">Instructor profiles — TBC</span>
-            </div>
+            <a href="instructors.html" class="link-arrow mt-6">
+              Meet the instructors
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
           </div>
+
+          <aside class="border-t-2 border-fg pt-6 lg:col-span-5" aria-labelledby="h2-ask-title" data-reveal>
+            <h3 id="h2-ask-title" class="type-quote text-crimson">Before your first climb, ask us about&hellip;</h3>
+            <ul class="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1" role="list">
+              <li class="type-h2">Rigging<span class="ms-3 font-light text-line-strong" aria-hidden="true">/</span></li>
+              <li class="type-h2">Mats<span class="ms-3 font-light text-line-strong" aria-hidden="true">/</span></li>
+              <li class="type-h2">Spotting<span class="ms-3 font-light text-line-strong" aria-hidden="true">/</span></li>
+              <li class="type-h2">Class sizes<span class="ms-3 font-light text-line-strong" aria-hidden="true">/</span></li>
+              <li class="type-h2">Your first session</li>
+            </ul>
+            <a href="contact.html" class="link-arrow mt-6">
+              Ask us before you book
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+          </aside>
 
         </div>
       </div>
@@ -410,15 +385,15 @@
         <div class="absolute inset-0 bg-linear-to-b from-stage/35 via-stage/85 via-45% to-stage" aria-hidden="true"></div>
       </div>
 
-      <div class="shell pb-[clamp(4rem,2rem+8vw,10rem)] pt-[clamp(14rem,10rem+18vw,28rem)] text-center">
+      <div class="shell pb-[clamp(3.5rem,1.75rem+4.5vw,7rem)] pt-[clamp(9rem,5rem+10vw,16rem)] text-center">
         <p class="eyebrow inline-block bg-stage/85 px-3 py-1.5">Performance showcases</p>
-        <h2 id="h2-show-title" class="type-display mx-auto mt-5 max-w-[14ch]" data-reveal>
+        <h2 id="h2-show-title" class="type-statement mx-auto mt-5 max-w-[14ch]" data-reveal>
           From rehearsal to <span class="accent-serif text-crimson-light">spotlight.</span>
         </h2>
 
         <!-- Programme card -->
-        <div class="mx-auto mt-12 grid max-w-[46rem] gap-6 border border-stage-line-strong bg-stage-2 p-5 text-start sm:grid-cols-[10rem_1fr] sm:p-6" data-reveal>
-          <figure class="media hidden aspect-[3/4] sm:block">
+        <div class="mx-auto mt-12 grid max-w-[46rem] gap-6 border border-stage-line-strong bg-stage-2 p-5 text-start sm:grid-cols-[9rem_1fr] sm:items-center sm:p-6" data-reveal>
+          <figure class="media hidden aspect-[4/5] sm:block">
             <img
               src="assets/images/home-2/showcase-duo-800.jpg"
               width="800" height="1035"
@@ -429,21 +404,12 @@
             <p class="text-on-stage-muted">
               Performing is part of the journey. Showcases give students the chance to present their work to an audience — in costume, under lights.
             </p>
-            <dl class="mt-5 grid grid-cols-[5.5rem_1fr] gap-x-4 gap-y-3 border-t border-stage-line pt-5 type-small">
-              <dt class="text-on-stage-muted">Event</dt><dd><span class="ph">Showcase name — TBC</span></dd>
-              <dt class="text-on-stage-muted">Date</dt><dd><span class="ph">Date — TBC</span></dd>
-              <dt class="text-on-stage-muted">Venue</dt><dd><span class="ph">Venue — TBC</span></dd>
-              <dt class="text-on-stage-muted">Open to</dt><dd><span class="ph">Eligibility — TBC</span></dd>
-            </dl>
+            <p class="mt-5 border-t border-stage-line pt-5 type-small text-on-stage">Ask us about upcoming opportunities to perform.</p>
           </div>
         </div>
 
         <div class="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-          <a href="contact.html" class="btn btn-secondary">Ask about showcases</a>
-          <a href="portal/index.html" class="btn btn-primary">
-            Students: register in the portal
-            <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
-          </a>
+          <a href="contact.html" class="btn btn-primary">Ask about showcases</a>
         </div>
       </div>
     </section>
@@ -455,7 +421,7 @@
       <div class="shell">
         <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-8">
 
-          <figure class="media order-2 aspect-[3/4] lg:order-none lg:col-span-3 lg:-mt-24" data-reveal>
+          <figure class="media order-2 aspect-[3/4] lg:order-none lg:col-span-3 lg:-mt-12" data-reveal>
             <img
               src="assets/images/home-2/community-smile-red-silk-800.jpg"
               srcset="assets/images/home-2/community-smile-red-silk-800.jpg 800w, assets/images/home-2/community-smile-red-silk-1600.jpg 1600w"
@@ -470,13 +436,9 @@
             <h2 id="h2-community-title" class="type-h1 mx-auto mt-6 max-w-[18ch]">
               A room full of people learning to <span class="accent-serif text-crimson">fly.</span>
             </h2>
-            <figure class="ph-block mx-auto mt-10 max-w-[30rem]">
-              <p class="type-quote text-muted">“Student or instructor quote.”</p>
-              <figcaption class="mt-4 flex flex-wrap items-center justify-center gap-3 type-small text-muted">
-                <span>— Name, role</span>
-                <span class="ph">Real quote to be supplied</span>
-              </figcaption>
-            </figure>
+            <p class="type-lead mx-auto mt-8 max-w-[30rem] text-balance text-muted">
+              Every climber started on the floor. Here you train alongside people learning the same skills, at every level.
+            </p>
             <div class="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
               <a href="instructors.html" class="link-arrow">
                 Meet the instructors
@@ -489,7 +451,7 @@
             </div>
           </div>
 
-          <figure class="media order-3 aspect-[3/4] lg:order-none lg:col-span-3 lg:mt-24" data-reveal>
+          <figure class="media order-3 aspect-[3/4] lg:order-none lg:col-span-3 lg:mt-12" data-reveal>
             <img
               src="assets/images/home-2/community-studio-climb-800.jpg"
               srcset="assets/images/home-2/community-studio-climb-800.jpg 800w, assets/images/home-2/community-studio-climb-1600.jpg 1600w"
@@ -535,9 +497,9 @@
             </a>
           </li>
           <li class="border-b border-fg">
-            <a href="classes.html#timetable" class="group grid grid-cols-[1fr_auto] items-center gap-x-6 gap-y-1 py-6 text-fg no-underline transition-colors hover:bg-chalk sm:py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto] md:px-4">
-              <span class="type-h2 group-hover:text-crimson">Book a class</span>
-              <span class="col-start-1 row-start-2 text-muted md:col-start-2 md:row-start-1">See the timetable and reserve a place.</span>
+            <a href="classes.html#beginner" class="group grid grid-cols-[1fr_auto] items-center gap-x-6 gap-y-1 py-6 text-fg no-underline transition-colors hover:bg-chalk sm:py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto] md:px-4">
+              <span class="type-h2 group-hover:text-crimson">Find your first class</span>
+              <span class="col-start-1 row-start-2 text-muted md:col-start-2 md:row-start-1">Start with a beginner class.</span>
               <svg class="flip-x row-span-2 size-8 text-crimson transition-[translate] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 md:row-span-1" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h17m-6-7 7 7-7 7" stroke="currentColor" stroke-width="1.75"/></svg>
             </a>
           </li>
@@ -545,8 +507,6 @@
 
         <div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
           <a href="contact.html" class="btn btn-secondary">Ask a question</a>
-          <span class="ph">Trial class &amp; pricing — TBC</span>
-          <span class="ph">Timetable — TBC</span>
         </div>
       </div>
     </section>

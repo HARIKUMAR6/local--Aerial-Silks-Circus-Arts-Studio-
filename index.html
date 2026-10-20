@@ -10,7 +10,6 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Instrument+Serif:ital@1&amp;display=swap">
   <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -38,14 +37,11 @@
     <!-- ================================================================
          ACT I — HERO: "The Drop"
          ================================================================ -->
-    <section class="hero-full on-stage relative isolate flex min-h-[100svh] overflow-hidden bg-stage" aria-labelledby="hero-title">
+    <section class="hero-full on-stage relative isolate flex max-lg:min-h-[100svh] hero-fit-overlay overflow-hidden bg-stage" aria-labelledby="hero-title">
       <div class="hero-media media absolute inset-x-0 top-0 -z-10 h-[68%] lg:inset-x-auto lg:inset-y-0 lg:end-0 lg:h-auto lg:w-[54%]">
         <img
-          src="https://images.unsplash.com/photo-1787661816469-ceb3fab5c7c7?auto=format&amp;fit=crop&amp;w=1200&amp;q=75"
-          srcset="https://images.unsplash.com/photo-1787661816469-ceb3fab5c7c7?auto=format&amp;fit=crop&amp;w=640&amp;q=70 640w,
-                  https://images.unsplash.com/photo-1787661816469-ceb3fab5c7c7?auto=format&amp;fit=crop&amp;w=1000&amp;q=70 1000w,
-                  https://images.unsplash.com/photo-1787661816469-ceb3fab5c7c7?auto=format&amp;fit=crop&amp;w=1400&amp;q=70 1400w,
-                  https://images.unsplash.com/photo-1787661816469-ceb3fab5c7c7?auto=format&amp;fit=crop&amp;w=1800&amp;q=70 1800w"
+          src="assets/images/home-1/hero-white-silk-800.jpg"
+          srcset="assets/images/home-1/hero-white-silk-800.jpg 800w, assets/images/home-1/hero-white-silk-1600.jpg 1600w"
           sizes="(min-width: 1024px) 54vw, 100vw"
           width="1400" height="2100"
           alt="An aerialist arches backwards on a long white silk under a single stage light, the fabric pooling on a reflective floor."
@@ -55,16 +51,16 @@
         <div class="hero-scrim absolute inset-0 bg-linear-to-t from-stage via-stage/30 to-stage/0 lg:bg-linear-to-r lg:from-stage lg:via-stage/25 lg:to-transparent rtl:lg:bg-linear-to-l" aria-hidden="true"></div>
       </div>
 
-      <div class="shell relative flex flex-col justify-end pb-14 pt-[calc(var(--header-h)+3rem)] lg:justify-center lg:pb-28">
+      <div class="shell relative flex flex-col justify-end pb-14 pt-[calc(var(--header-h)+3rem)] lg:justify-center lg:pb-16 lg:pt-[calc(var(--header-h)+2rem)]">
         <div class="hero-copy lg:w-[64%]">
-          <p class="eyebrow text-on-stage-muted">Aerial silks &amp; circus arts studio</p>
-          <h1 id="hero-title" class="type-display mt-5 lg:mt-8">
+          <p class="eyebrow text-on-stage lg:text-on-stage-muted">Aerial silks &amp; circus arts studio</p>
+          <h1 id="hero-title" class="type-display hero-title-fit mt-5 lg:mt-6">
             Strength,<br><span class="accent-serif">suspended.</span>
           </h1>
-          <p class="type-lead mt-6 max-w-[34rem] text-on-stage-muted lg:mt-10">
+          <p class="type-lead mt-6 max-w-[34rem] text-on-stage-muted lg:mt-8">
             Learn aerial silks and circus arts with coaching that builds real strength — and the freedom to move in your own way.
           </p>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-12">
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-10">
             <a href="classes.html#beginner" class="btn btn-primary btn-lg">
               Find your first class
               <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
@@ -111,14 +107,12 @@
           <figure class="flex flex-col md:col-span-5 md:col-start-8 md:row-start-1 lg:col-span-4 lg:col-start-9 lg:row-span-2" data-reveal>
             <div class="media aspect-[4/5] md:aspect-[3/4] lg:aspect-auto lg:min-h-[28rem] lg:flex-1">
               <img
-                src="https://images.unsplash.com/photo-1773459516717-c772070071c7?auto=format&amp;fit=crop&amp;w=900&amp;q=70"
-                srcset="https://images.unsplash.com/photo-1773459516717-c772070071c7?auto=format&amp;fit=crop&amp;w=500&amp;q=70 500w,
-                        https://images.unsplash.com/photo-1773459516717-c772070071c7?auto=format&amp;fit=crop&amp;w=900&amp;q=70 900w,
-                        https://images.unsplash.com/photo-1773459516717-c772070071c7?auto=format&amp;fit=crop&amp;w=1300&amp;q=70 1300w"
+                src="assets/images/home-1/studio-blue-silks-800.jpg"
+                srcset="assets/images/home-1/studio-blue-silks-800.jpg 800w, assets/images/home-1/studio-blue-silks-1600.jpg 1600w"
                 sizes="(min-width: 1024px) 30vw, (min-width: 768px) 40vw, 100vw"
-                width="900" height="1350"
-                alt="Two aerialists in white costumes perform together around a suspended hoop, lit in violet stage light."
-                class="object-[50%_40%]"
+                width="1600" height="2399"
+                alt="An aerialist in white holds a wide split between two blue silks against a bright studio wall."
+                class="object-[50%_45%]"
                 loading="lazy" decoding="async">
             </div>
           </figure>
@@ -156,20 +150,20 @@
     <!-- ================================================================
          ACT III — DISCIPLINE INDEX
          ================================================================ -->
-    <section id="disciplines" class="relative bg-chalk pb-[clamp(4rem,2rem+8vw,10rem)]" aria-labelledby="disciplines-title">
+    <section id="disciplines" class="relative bg-chalk pb-[clamp(3.5rem,1.75rem+4.5vw,7rem)]" aria-labelledby="disciplines-title">
       <div class="shell">
         <div class="grid gap-10 border-t border-fg pt-10 lg:grid-cols-12 lg:gap-8 lg:pt-16">
 
           <div class="lg:col-span-7">
             <p class="eyebrow text-crimson">02 — Disciplines</p>
-            <h2 id="disciplines-title" class="type-h2 mt-4">
+            <h2 id="disciplines-title" class="type-h1 mt-4">
               Choose your <span class="accent-serif text-crimson">apparatus.</span>
             </h2>
 
             <ul class="mt-10 border-t border-line lg:mt-14" role="list" data-discipline-list>
               <!-- 01 Silks -->
               <li class="border-b border-line">
-                <a href="classes.html#silks" class="discipline-row grid grid-cols-[2rem_1fr_auto] gap-x-3 py-7 text-fg no-underline sm:grid-cols-[3rem_1fr_auto] sm:gap-x-6 lg:py-9"
+                <a href="classes.html#silks" class="discipline-row grid grid-cols-[2rem_1fr_auto] gap-x-3 py-7 text-fg no-underline sm:grid-cols-[3rem_1fr_auto] sm:gap-x-6 lg:py-7"
                    data-discipline="silks" data-active>
                   <span class="eyebrow pt-2 text-muted" aria-hidden="true">01</span>
                   <span class="min-w-0">
@@ -178,9 +172,8 @@
                     <span class="badge badge-core mt-4">Core discipline</span>
                     <span class="media mt-6 block aspect-[4/3] lg:hidden">
                       <img
-                        src="https://images.unsplash.com/photo-1738681172508-12b39b19ffd2?auto=format&amp;fit=crop&amp;w=900&amp;q=70"
-                        srcset="https://images.unsplash.com/photo-1738681172508-12b39b19ffd2?auto=format&amp;fit=crop&amp;w=600&amp;q=70 600w,
-                                https://images.unsplash.com/photo-1738681172508-12b39b19ffd2?auto=format&amp;fit=crop&amp;w=900&amp;q=70 900w"
+                        src="assets/images/home-1/discipline-silks-800.jpg"
+                        srcset="assets/images/home-1/discipline-silks-800.jpg 800w, assets/images/home-1/discipline-silks-1600.jpg 1600w"
                         sizes="100vw" width="900" height="600"
                         alt="" class="object-[55%_50%]" loading="lazy" decoding="async">
                     </span>
@@ -191,7 +184,7 @@
 
               <!-- 02 Hoop -->
               <li class="border-b border-line">
-                <a href="classes.html#hoop" class="discipline-row grid grid-cols-[2rem_1fr_auto] gap-x-3 py-7 text-fg no-underline sm:grid-cols-[3rem_1fr_auto] sm:gap-x-6 lg:py-9"
+                <a href="classes.html#hoop" class="discipline-row grid grid-cols-[2rem_1fr_auto] gap-x-3 py-7 text-fg no-underline sm:grid-cols-[3rem_1fr_auto] sm:gap-x-6 lg:py-7"
                    data-discipline="hoop">
                   <span class="eyebrow pt-2 text-muted" aria-hidden="true">02</span>
                   <span class="min-w-0">
@@ -212,7 +205,7 @@
 
               <!-- 03 Trapeze -->
               <li class="border-b border-line">
-                <a href="classes.html#trapeze" class="discipline-row grid grid-cols-[2rem_1fr_auto] gap-x-3 py-7 text-fg no-underline sm:grid-cols-[3rem_1fr_auto] sm:gap-x-6 lg:py-9"
+                <a href="classes.html#trapeze" class="discipline-row grid grid-cols-[2rem_1fr_auto] gap-x-3 py-7 text-fg no-underline sm:grid-cols-[3rem_1fr_auto] sm:gap-x-6 lg:py-7"
                    data-discipline="trapeze">
                   <span class="eyebrow pt-2 text-muted" aria-hidden="true">03</span>
                   <span class="min-w-0">
@@ -238,7 +231,7 @@
             <div class="sticky top-[calc(var(--header-h)+2rem)]">
               <div class="media reveal-frame aspect-[4/5]" data-discipline-frame>
                 <img data-discipline-image="silks" data-active
-                  src="https://images.unsplash.com/photo-1738681172508-12b39b19ffd2?auto=format&amp;fit=crop&amp;w=1100&amp;q=70"
+                  src="assets/images/home-1/discipline-silks-1600.jpg"
                   width="1100" height="733" alt="" class="object-[56%_50%]" loading="lazy" decoding="async">
                 <img data-discipline-image="hoop"
                   src="assets/images/home-1/discipline-hoop-1600.jpg"
@@ -272,16 +265,14 @@
           </p>
         </div>
 
-        <div class="mt-12 grid gap-16 md:grid-cols-12 md:gap-8 lg:mt-20">
+        <div class="mt-10 grid gap-16 md:grid-cols-12 md:gap-8 lg:mt-14">
 
           <div class="relative pb-16 sm:pb-24 md:col-span-6 md:self-start" data-reveal>
             <figure class="w-[86%]">
-              <div class="media aspect-[4/5]">
+              <div class="media aspect-[4/5] lg:aspect-square">
                 <img
-                  src="https://images.unsplash.com/photo-1756314354826-91d31d85634a?auto=format&amp;fit=crop&amp;w=1000&amp;q=70"
-                  srcset="https://images.unsplash.com/photo-1756314354826-91d31d85634a?auto=format&amp;fit=crop&amp;w=600&amp;q=70 600w,
-                          https://images.unsplash.com/photo-1756314354826-91d31d85634a?auto=format&amp;fit=crop&amp;w=1000&amp;q=70 1000w,
-                          https://images.unsplash.com/photo-1756314354826-91d31d85634a?auto=format&amp;fit=crop&amp;w=1400&amp;q=70 1400w"
+                  src="assets/images/home-1/training-rope-coaching-800.jpg"
+                  srcset="assets/images/home-1/training-rope-coaching-800.jpg 800w, assets/images/home-1/training-rope-coaching-1600.jpg 1600w"
                   sizes="(min-width: 1024px) 42vw, 86vw"
                   width="1400" height="933"
                   alt="A student balances on a vertical rope above crash mats while two coaches watch and guide her."
@@ -292,9 +283,8 @@
             <figure class="absolute bottom-0 end-0 w-[58%] border-[6px] border-sand sm:border-8">
               <div class="media aspect-[3/2]">
                 <img
-                  src="https://images.unsplash.com/photo-1756314354803-be78f7fc5e35?auto=format&amp;fit=crop&amp;w=800&amp;q=70"
-                  srcset="https://images.unsplash.com/photo-1756314354803-be78f7fc5e35?auto=format&amp;fit=crop&amp;w=500&amp;q=70 500w,
-                          https://images.unsplash.com/photo-1756314354803-be78f7fc5e35?auto=format&amp;fit=crop&amp;w=800&amp;q=70 800w"
+                  src="assets/images/home-1/training-coach-talk-800.jpg"
+                  srcset="assets/images/home-1/training-coach-talk-800.jpg 800w, assets/images/home-1/training-coach-talk-1600.jpg 1600w"
                   sizes="(min-width: 1024px) 28vw, 58vw"
                   width="800" height="533"
                   alt="An instructor talks a student through a movement in a training hall with trapezes and mats."
@@ -353,13 +343,11 @@
          ACT V — PERFORMANCE & SHOWCASES
          Text on the inline-start side, full-bleed stage image on the end side.
          ================================================================ -->
-    <section id="showcases" class="on-stage relative isolate overflow-hidden bg-stage lg:min-h-[44rem]" aria-labelledby="showcases-title">
+    <section id="showcases" class="on-stage relative isolate overflow-hidden bg-stage lg:min-h-[38rem]" aria-labelledby="showcases-title">
       <div class="media relative aspect-[4/5] sm:aspect-[16/10] lg:absolute lg:inset-y-0 lg:end-0 lg:aspect-auto lg:w-1/2">
         <img
-          src="https://images.unsplash.com/photo-1762271232481-30bd8d3342fa?auto=format&amp;fit=crop&amp;w=1200&amp;q=70"
-          srcset="https://images.unsplash.com/photo-1762271232481-30bd8d3342fa?auto=format&amp;fit=crop&amp;w=640&amp;q=70 640w,
-                  https://images.unsplash.com/photo-1762271232481-30bd8d3342fa?auto=format&amp;fit=crop&amp;w=1000&amp;q=70 1000w,
-                  https://images.unsplash.com/photo-1762271232481-30bd8d3342fa?auto=format&amp;fit=crop&amp;w=1400&amp;q=70 1400w"
+          src="assets/images/home-1/performance-duo-red-silks-800.jpg"
+          srcset="assets/images/home-1/performance-duo-red-silks-800.jpg 800w, assets/images/home-1/performance-duo-red-silks-1600.jpg 1600w"
           sizes="(min-width: 1024px) 50vw, 100vw"
           width="1400" height="2100"
           alt="Two performers in a duet on red silks, lit in deep orange against a projected night sky."
@@ -428,9 +416,8 @@
             <figure class="mt-12 lg:mt-14" data-reveal>
               <div class="media aspect-[3/2]">
                 <img
-                  src="https://images.unsplash.com/photo-1762363018712-9aa9b90a620d?auto=format&amp;fit=crop&amp;w=1100&amp;q=70"
-                  srcset="https://images.unsplash.com/photo-1762363018712-9aa9b90a620d?auto=format&amp;fit=crop&amp;w=600&amp;q=70 600w,
-                          https://images.unsplash.com/photo-1762363018712-9aa9b90a620d?auto=format&amp;fit=crop&amp;w=1100&amp;q=70 1100w"
+                  src="assets/images/home-1/community-stage-lights-800.jpg"
+                  srcset="assets/images/home-1/community-stage-lights-800.jpg 800w, assets/images/home-1/community-stage-lights-1600.jpg 1600w"
                   sizes="(min-width: 1024px) 45vw, 100vw"
                   width="1100" height="733"
                   alt="Two acrobats perform together high above the stage in front of a wall of bright red and white lights."
@@ -442,11 +429,10 @@
 
           <div class="lg:col-span-5 lg:col-start-8">
             <figure data-reveal>
-              <div class="media aspect-[4/5]">
+              <div class="media aspect-[4/5] lg:aspect-[5/6]">
                 <img
-                  src="https://images.unsplash.com/photo-1762363018535-cc566dc80910?auto=format&amp;fit=crop&amp;w=1000&amp;q=70"
-                  srcset="https://images.unsplash.com/photo-1762363018535-cc566dc80910?auto=format&amp;fit=crop&amp;w=600&amp;q=70 600w,
-                          https://images.unsplash.com/photo-1762363018535-cc566dc80910?auto=format&amp;fit=crop&amp;w=1000&amp;q=70 1000w"
+                  src="assets/images/home-1/community-red-silks-audience-800.jpg"
+                  srcset="assets/images/home-1/community-red-silks-audience-800.jpg 800w, assets/images/home-1/community-red-silks-audience-1600.jpg 1600w"
                   sizes="(min-width: 1024px) 38vw, 100vw"
                   width="1000" height="1500"
                   alt="An aerialist hangs upside down in a red silk above a fellow performer, watched by an audience in silhouette."
@@ -457,9 +443,8 @@
             <figure class="ms-auto mt-8 w-[90%]" data-reveal>
               <div class="media aspect-[3/2]">
                 <img
-                  src="https://images.unsplash.com/photo-1756314354647-6e77562d9788?auto=format&amp;fit=crop&amp;w=800&amp;q=70"
-                  srcset="https://images.unsplash.com/photo-1756314354647-6e77562d9788?auto=format&amp;fit=crop&amp;w=500&amp;q=70 500w,
-                          https://images.unsplash.com/photo-1756314354647-6e77562d9788?auto=format&amp;fit=crop&amp;w=800&amp;q=70 800w"
+                  src="assets/images/home-1/community-rings-800.jpg"
+                  srcset="assets/images/home-1/community-rings-800.jpg 800w, assets/images/home-1/community-rings-1600.jpg 1600w"
                   sizes="(min-width: 1024px) 30vw, 78vw"
                   width="800" height="533"
                   alt="A student hangs inverted from aerial rings in a training hall, with crash mats on the floor below."
@@ -484,7 +469,7 @@
       </div>
 
       <div class="shell pt-[clamp(1rem,0.5rem+2vw,3rem)] text-center">
-        <h2 id="cta-title" class="type-display mx-auto max-w-[15ch]" data-reveal>
+        <h2 id="cta-title" class="type-statement mx-auto max-w-[16ch]" data-reveal>
           Your first climb starts on the <span class="accent-serif text-crimson-light">ground.</span>
         </h2>
         <div data-reveal>
@@ -493,7 +478,7 @@
           </p>
           <div class="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
             <a href="classes.html#beginner" class="btn btn-primary btn-lg">
-              Book a class
+              Find your first class
               <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
             </a>
             <a href="contact.html" class="btn btn-secondary btn-lg">Ask a question</a>
