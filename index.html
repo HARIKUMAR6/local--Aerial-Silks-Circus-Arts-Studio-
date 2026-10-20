@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aerial Silks &amp; Circus Arts Studio (temporary name) — Home</title>
+  <meta name="description" content="Aerial silks and circus arts training for every level, from your first climb to your first performance.">
+  <meta name="theme-color" content="#16120f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%2316120f'/%3E%3Ccircle cx='20' cy='4' r='2.4' fill='%23ff5a1f'/%3E%3Cpath d='M20 6.5C27 11 27 16 20 20.5S10 28 9 38' fill='none' stroke='%23f2ece3' stroke-width='2.75' stroke-linecap='round'/%3E%3Cpath d='M20 6.5C13 11 13 16 20 20.5S30 28 31 38' fill='none' stroke='%23e8566b' stroke-width='2.75' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Instrument+Serif:ital@1&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Applies the saved / system theme and direction before first paint -->
+  <script src="assets/js/preferences.js"></script>
+  <script src="assets/js/site-chrome.js" defer></script>
+  <script src="assets/js/home.js" defer></script>
+</head>
+
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <site-header current="home" overlay>
+    <noscript>
+      <nav aria-label="Main" class="on-stage bg-stage px-4 py-3">
+        <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="classes.html">Classes</a> ·
+        <a href="instructors.html">Instructors</a> · <a href="contact.html">Contact</a> ·
+        <a href="portal/dashboard.html">Dashboard</a> · <a href="portal/index.html">Student login</a>
+      </nav>
+    </noscript>
+  </site-header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ================================================================
+         ACT I — HERO: "The Drop"
+         ================================================================ -->
+    <section class="hero-full on-stage relative isolate flex min-h-[100svh] overflow-hidden bg-stage" aria-labelledby="hero-title">
+      <div class="hero-media media absolute inset-x-0 top-0 -z-10 h-[68%] lg:inset-x-auto lg:inset-y-0 lg:end-0 lg:h-auto lg:w-[54%]">
+        <img
+          src="https://images.unsplash.com/photo-1787661816469-ceb3fab5c7c7?auto=format&amp;fit=crop&amp;w=1200&amp;q=75"
+          srcset="https://images.unsplash.com/photo-1787661816469-ceb3fab5c7c7?auto=format&amp;fit=crop&amp;w=640&amp;q=70 640w,
+                  https://images.unsplash.com/photo-1787661816469-ceb3fab5c7c7?auto=format&amp;fit=crop&amp;w=1000&amp;q=70 1000w,
+                  https://images.unsplash.com/photo-1787661816469-ceb3fab5c7c7?auto=format&amp;fit=crop&amp;w=1400&amp;q=70 1400w,
+                  https://images.unsplash.com/photo-1787661816469-ceb3fab5c7c7?auto=format&amp;fit=crop&amp;w=1800&amp;q=70 1800w"
+          sizes="(min-width: 1024px) 54vw, 100vw"
+          width="1400" height="2100"
+          alt="An aerialist arches backwards on a long white silk under a single stage light, the fabric pooling on a reflective floor."
+          class="object-[58%_30%] lg:object-[52%_42%]"
+          fetchpriority="high">
+        <!-- Scrim: bottom on mobile (text sits low), inline-start edge on desktop (headline crosses onto the image) -->
+        <div class="hero-scrim absolute inset-0 bg-linear-to-t from-stage via-stage/30 to-stage/0 lg:bg-linear-to-r lg:from-stage lg:via-stage/25 lg:to-transparent rtl:lg:bg-linear-to-l" aria-hidden="true"></div>
+      </div>
+
+      <div class="shell relative flex flex-col justify-end pb-14 pt-[calc(var(--header-h)+3rem)] lg:justify-center lg:pb-28">
+        <div class="hero-copy lg:w-[64%]">
+          <p class="eyebrow text-on-stage-muted">Aerial silks &amp; circus arts studio</p>
+          <h1 id="hero-title" class="type-display mt-5 lg:mt-8">
+            Strength,<br><span class="accent-serif">suspended.</span>
+          </h1>
+          <p class="type-lead mt-6 max-w-[34rem] text-on-stage-muted lg:mt-10">
+            Learn aerial silks and circus arts with coaching that builds real strength — and the freedom to move in your own way.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-12">
+            <a href="classes.html#beginner" class="btn btn-primary btn-lg">
+              Find your first class
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+            <a href="#disciplines" class="btn btn-secondary btn-lg">Explore disciplines</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Line begins: drops out of the hero into the next section -->
+      <div class="pointer-events-none absolute inset-x-0 bottom-0 hidden lg:block" aria-hidden="true">
+        <div class="shell relative">
+          <span class="absolute bottom-10 start-[calc(var(--gutter-x)+1rem)] eyebrow whitespace-nowrap text-on-stage-muted [direction:ltr] [writing-mode:vertical-rl] rotate-180">Scroll</span>
+          <span class="the-line absolute bottom-0 start-[var(--gutter-x)] block h-28 text-on-stage/50"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         ACT II — PROPOSITION
+         Heading left; image runs the full height of the text column.
+         ================================================================ -->
+    <section id="studio" class="section-y relative bg-chalk" aria-labelledby="studio-title">
+      <div class="pointer-events-none absolute inset-x-0 top-0" aria-hidden="true">
+        <div class="shell relative">
+          <span class="the-line absolute start-[var(--gutter-x)] top-0 block h-[clamp(2.5rem,1rem+6vw,7rem)] text-crimson" data-reveal></span>
+        </div>
+      </div>
+
+      <div class="shell">
+        <div class="grid gap-12 md:grid-cols-12 md:gap-x-8 lg:gap-y-12">
+
+          <div class="md:col-span-7 md:row-start-1" data-reveal>
+            <p class="eyebrow text-crimson">01 — The studio</p>
+            <h2 id="studio-title" class="type-h1 mt-6 max-w-[16ch]">
+              Where athletic discipline meets artistic <span class="accent-serif text-crimson">freedom.</span>
+            </h2>
+            <p class="type-lead mt-8 max-w-[38rem] text-muted">
+              Aerial work asks for two things at once: the strength to hold yourself in the air, and the
+              expression to make it mean something. Training here gives equal weight to both.
+            </p>
+          </div>
+
+          <figure class="flex flex-col md:col-span-5 md:col-start-8 md:row-start-1 lg:col-span-4 lg:col-start-9 lg:row-span-2" data-reveal>
+            <div class="media aspect-[4/5] md:aspect-[3/4] lg:aspect-auto lg:min-h-[28rem] lg:flex-1">
+              <img
+                src="https://images.unsplash.com/photo-1773459516717-c772070071c7?auto=format&amp;fit=crop&amp;w=900&amp;q=70"
+                srcset="https://images.unsplash.com/photo-1773459516717-c772070071c7?auto=format&amp;fit=crop&amp;w=500&amp;q=70 500w,
+                        https://images.unsplash.com/photo-1773459516717-c772070071c7?auto=format&amp;fit=crop&amp;w=900&amp;q=70 900w,
+                        https://images.unsplash.com/photo-1773459516717-c772070071c7?auto=format&amp;fit=crop&amp;w=1300&amp;q=70 1300w"
+                sizes="(min-width: 1024px) 30vw, (min-width: 768px) 40vw, 100vw"
+                width="900" height="1350"
+                alt="Two aerialists in white costumes perform together around a suspended hoop, lit in violet stage light."
+                class="object-[50%_40%]"
+                loading="lazy" decoding="async">
+            </div>
+            <figcaption class="mt-3 type-caption text-muted">Movement in the air — placeholder image</figcaption>
+          </figure>
+
+          <div class="md:col-span-12 md:row-start-2 lg:col-span-7" data-reveal>
+            <p><span class="ph">Proposed copy — confirm with studio</span></p>
+            <ol class="mt-5 border-t border-fg" role="list">
+              <li class="grid grid-cols-[3rem_1fr] gap-x-4 border-b border-line py-6">
+                <span class="eyebrow pt-1.5 text-crimson" aria-hidden="true">01</span>
+                <div>
+                  <h3 class="type-h4">Technique before height</h3>
+                  <p class="mt-2 text-muted">Classes build grip, conditioning and body awareness first, so every new skill rests on solid foundations.</p>
+                </div>
+              </li>
+              <li class="grid grid-cols-[3rem_1fr] gap-x-4 border-b border-line py-6">
+                <span class="eyebrow pt-1.5 text-crimson" aria-hidden="true">02</span>
+                <div>
+                  <h3 class="type-h4">Progress you can see</h3>
+                  <p class="mt-2 text-muted">Clear levels from Beginner to Advanced, plus a student portal for booking classes and logging the skills you earn.</p>
+                </div>
+              </li>
+              <li class="grid grid-cols-[3rem_1fr] gap-x-4 border-b border-line py-6">
+                <span class="eyebrow pt-1.5 text-crimson" aria-hidden="true">03</span>
+                <div>
+                  <h3 class="type-h4">A stage to aim for</h3>
+                  <p class="mt-2 text-muted">Showcase opportunities give students a reason to turn practice into performance.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         ACT III — DISCIPLINE INDEX
+         ================================================================ -->
+    <section id="disciplines" class="relative bg-chalk pb-[clamp(4rem,2rem+8vw,10rem)]" aria-labelledby="disciplines-title">
+      <div class="shell">
+        <div class="grid gap-10 border-t border-fg pt-10 lg:grid-cols-12 lg:gap-8 lg:pt-16">
+
+          <div class="lg:col-span-7">
+            <p class="eyebrow text-crimson">02 — Disciplines</p>
+            <h2 id="disciplines-title" class="type-h2 mt-4">
+              Choose your <span class="accent-serif text-crimson">apparatus.</span>
+            </h2>
+
+            <ul class="mt-10 border-t border-line lg:mt-14" role="list" data-discipline-list>
+              <!-- 01 Silks -->
+              <li class="border-b border-line">
+                <a href="classes.html#silks" class="discipline-row grid grid-cols-[2rem_1fr_auto] gap-x-3 py-7 text-fg no-underline sm:grid-cols-[3rem_1fr_auto] sm:gap-x-6 lg:py-9"
+                   data-discipline="silks" data-active>
+                  <span class="eyebrow pt-2 text-muted" aria-hidden="true">01</span>
+                  <span class="min-w-0">
+                    <span class="discipline-name block type-h1">Aerial Silks</span>
+                    <span class="mt-3 block max-w-[42ch] text-muted">Climbs, wraps and drops on two lengths of fabric suspended from a single point.</span>
+                    <span class="badge badge-core mt-4">Core discipline</span>
+                    <span class="media mt-6 block aspect-[4/3] lg:hidden">
+                      <img
+                        src="https://images.unsplash.com/photo-1738681172508-12b39b19ffd2?auto=format&amp;fit=crop&amp;w=900&amp;q=70"
+                        srcset="https://images.unsplash.com/photo-1738681172508-12b39b19ffd2?auto=format&amp;fit=crop&amp;w=600&amp;q=70 600w,
+                                https://images.unsplash.com/photo-1738681172508-12b39b19ffd2?auto=format&amp;fit=crop&amp;w=900&amp;q=70 900w"
+                        sizes="100vw" width="900" height="600"
+                        alt="" class="object-[55%_50%]" loading="lazy" decoding="async">
+                    </span>
+                  </span>
+                  <svg class="flip-x mt-3 size-6 shrink-0 text-crimson" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h17m-6-7 7 7-7 7" stroke="currentColor" stroke-width="1.75"/></svg>
+                </a>
+              </li>
+
+              <!-- 02 Hoop -->
+              <li class="border-b border-line">
+                <a href="classes.html#hoop" class="discipline-row grid grid-cols-[2rem_1fr_auto] gap-x-3 py-7 text-fg no-underline sm:grid-cols-[3rem_1fr_auto] sm:gap-x-6 lg:py-9"
+                   data-discipline="hoop">
+                  <span class="eyebrow pt-2 text-muted" aria-hidden="true">02</span>
+                  <span class="min-w-0">
+                    <span class="discipline-name block type-h1">Aerial Hoop</span>
+                    <span class="mt-3 block max-w-[42ch] text-muted">Strength, balance and shape-making in and around a suspended steel ring, also called lyra.</span>
+                    <span class="badge badge-proposed mt-4">Proposed — to be confirmed</span>
+                    <span class="media mt-6 block aspect-[4/3] lg:hidden">
+                      <img
+                        src="https://images.unsplash.com/photo-1763208253756-eb536cc28c43?auto=format&amp;fit=crop&amp;w=900&amp;q=70"
+                        srcset="https://images.unsplash.com/photo-1763208253756-eb536cc28c43?auto=format&amp;fit=crop&amp;w=600&amp;q=70 600w,
+                                https://images.unsplash.com/photo-1763208253756-eb536cc28c43?auto=format&amp;fit=crop&amp;w=900&amp;q=70 900w"
+                        sizes="100vw" width="900" height="1350"
+                        alt="" class="object-[48%_58%]" loading="lazy" decoding="async">
+                    </span>
+                  </span>
+                  <svg class="flip-x mt-3 size-6 shrink-0 text-crimson" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h17m-6-7 7 7-7 7" stroke="currentColor" stroke-width="1.75"/></svg>
+                </a>
+              </li>
+
+              <!-- 03 Trapeze -->
+              <li class="border-b border-line">
+                <a href="classes.html#trapeze" class="discipline-row grid grid-cols-[2rem_1fr_auto] gap-x-3 py-7 text-fg no-underline sm:grid-cols-[3rem_1fr_auto] sm:gap-x-6 lg:py-9"
+                   data-discipline="trapeze">
+                  <span class="eyebrow pt-2 text-muted" aria-hidden="true">03</span>
+                  <span class="min-w-0">
+                    <span class="discipline-name block type-h1">Trapeze</span>
+                    <span class="mt-3 block max-w-[42ch] text-muted">Holds, balances and swings on a bar hung from two ropes.</span>
+                    <span class="badge badge-proposed mt-4">Proposed — to be confirmed</span>
+                    <span class="media mt-6 block aspect-[4/3] lg:hidden">
+                      <img
+                        src="https://images.unsplash.com/photo-1760492280627-548399003cd5?auto=format&amp;fit=crop&amp;w=900&amp;q=70"
+                        srcset="https://images.unsplash.com/photo-1760492280627-548399003cd5?auto=format&amp;fit=crop&amp;w=600&amp;q=70 600w,
+                                https://images.unsplash.com/photo-1760492280627-548399003cd5?auto=format&amp;fit=crop&amp;w=900&amp;q=70 900w"
+                        sizes="100vw" width="900" height="600"
+                        alt="" class="object-[48%_50%]" loading="lazy" decoding="async">
+                    </span>
+                  </span>
+                  <svg class="flip-x mt-3 size-6 shrink-0 text-crimson" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h17m-6-7 7 7-7 7" stroke="currentColor" stroke-width="1.75"/></svg>
+                </a>
+              </li>
+
+              <!-- 04 Unconfirmed -->
+              <li class="border-b border-line">
+                <div class="grid grid-cols-[2rem_1fr] gap-x-3 py-7 sm:grid-cols-[3rem_1fr] sm:gap-x-6 lg:py-9">
+                  <span class="eyebrow pt-1 text-muted" aria-hidden="true">04</span>
+                  <span class="min-w-0">
+                    <span class="block type-h3 text-muted">More disciplines</span>
+                    <span class="ph mt-3">Further circus disciplines — to be confirmed</span>
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Desktop image frame: swaps with hover / keyboard focus; follows the list while scrolling -->
+          <div class="hidden lg:col-span-4 lg:col-start-9 lg:block" aria-hidden="true">
+            <div class="sticky top-[calc(var(--header-h)+2rem)]">
+              <div class="media reveal-frame aspect-[4/5]" data-discipline-frame>
+                <img data-discipline-image="silks" data-active
+                  src="https://images.unsplash.com/photo-1738681172508-12b39b19ffd2?auto=format&amp;fit=crop&amp;w=1100&amp;q=70"
+                  width="1100" height="733" alt="" class="object-[56%_50%]" loading="lazy" decoding="async">
+                <img data-discipline-image="hoop"
+                  src="https://images.unsplash.com/photo-1763208253756-eb536cc28c43?auto=format&amp;fit=crop&amp;w=900&amp;q=70"
+                  width="900" height="1350" alt="" class="object-[48%_55%]" loading="lazy" decoding="async">
+                <img data-discipline-image="trapeze"
+                  src="https://images.unsplash.com/photo-1760492280627-548399003cd5?auto=format&amp;fit=crop&amp;w=1100&amp;q=70"
+                  width="1100" height="733" alt="" class="object-[47%_50%] grayscale" loading="lazy" decoding="async">
+              </div>
+              <p class="mt-3 type-caption text-muted">Placeholder images — to be replaced with studio photography</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         ACT IV — TRAINING PATH
+         Heading spans the top-left; images and the level ladder sit below.
+         ================================================================ -->
+    <section id="training" class="section-y bg-sand" aria-labelledby="training-title">
+      <div class="shell">
+        <div class="grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-8" data-reveal>
+          <div class="lg:col-span-7">
+            <p class="eyebrow text-crimson">03 — Training</p>
+            <h2 id="training-title" class="type-h1 mt-6 max-w-[22ch]">
+              From first climb to first <span class="accent-serif text-crimson">drop.</span>
+            </h2>
+          </div>
+          <p class="type-lead text-muted lg:col-span-4 lg:col-start-9">
+            Every student follows the same path upward. Each level builds on the one before it, so you always know what you're working towards.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-16 md:grid-cols-12 md:gap-8 lg:mt-20">
+
+          <div class="relative pb-16 sm:pb-24 md:col-span-6 md:self-start" data-reveal>
+            <figure class="w-[86%]">
+              <div class="media aspect-[4/5]">
+                <img
+                  src="https://images.unsplash.com/photo-1756314354826-91d31d85634a?auto=format&amp;fit=crop&amp;w=1000&amp;q=70"
+                  srcset="https://images.unsplash.com/photo-1756314354826-91d31d85634a?auto=format&amp;fit=crop&amp;w=600&amp;q=70 600w,
+                          https://images.unsplash.com/photo-1756314354826-91d31d85634a?auto=format&amp;fit=crop&amp;w=1000&amp;q=70 1000w,
+                          https://images.unsplash.com/photo-1756314354826-91d31d85634a?auto=format&amp;fit=crop&amp;w=1400&amp;q=70 1400w"
+                  sizes="(min-width: 1024px) 42vw, 86vw"
+                  width="1400" height="933"
+                  alt="A student balances on a vertical rope above crash mats while two coaches watch and guide her."
+                  class="object-[56%_40%]"
+                  loading="lazy" decoding="async">
+              </div>
+            </figure>
+            <figure class="absolute bottom-0 end-0 w-[58%] border-[6px] border-sand sm:border-8">
+              <div class="media aspect-[3/2]">
+                <img
+                  src="https://images.unsplash.com/photo-1756314354803-be78f7fc5e35?auto=format&amp;fit=crop&amp;w=800&amp;q=70"
+                  srcset="https://images.unsplash.com/photo-1756314354803-be78f7fc5e35?auto=format&amp;fit=crop&amp;w=500&amp;q=70 500w,
+                          https://images.unsplash.com/photo-1756314354803-be78f7fc5e35?auto=format&amp;fit=crop&amp;w=800&amp;q=70 800w"
+                  sizes="(min-width: 1024px) 28vw, 58vw"
+                  width="800" height="533"
+                  alt="An instructor talks a student through a movement in a training hall with trapezes and mats."
+                  class="object-[62%_40%]"
+                  loading="lazy" decoding="async">
+              </div>
+            </figure>
+          </div>
+
+          <div class="md:col-span-6 lg:col-span-5 lg:col-start-8" data-reveal>
+            <div class="relative">
+              <span class="the-line absolute bottom-3 start-[7px] top-3 block text-fg" aria-hidden="true" data-reveal></span>
+              <ol class="space-y-10" role="list">
+                <li class="relative ps-10">
+                  <span class="absolute start-0 top-1.5 size-[15px] rounded-full border-2 border-fg bg-sand" aria-hidden="true"></span>
+                  <p class="eyebrow text-muted">Level 1</p>
+                  <h3 class="type-h3 mt-1">Beginner</h3>
+                  <p class="mt-2 text-muted">For first-timers. Build grip strength, basic climbs and foundational positions, working close to the floor.</p>
+                </li>
+                <li class="relative ps-10">
+                  <span class="absolute start-0 top-1.5 size-[15px] rounded-full border-2 border-fg bg-sand" aria-hidden="true"></span>
+                  <p class="eyebrow text-muted">Level 2</p>
+                  <h3 class="type-h3 mt-1">Intermediate</h3>
+                  <p class="mt-2 text-muted">Link skills into sequences, add inversions from the air and begin working at height.</p>
+                </li>
+                <li class="relative ps-10">
+                  <span class="absolute start-0 top-1.5 size-[15px] rounded-full border-2 border-crimson bg-crimson" aria-hidden="true"></span>
+                  <p class="eyebrow text-crimson">Level 3</p>
+                  <h3 class="type-h3 mt-1">Advanced</h3>
+                  <p class="mt-2 text-muted">Dynamic drops, complex transitions and choreography ready for performance.</p>
+                </li>
+              </ol>
+            </div>
+            <p class="mt-6"><span class="ph">Proposed level descriptions — prerequisites TBC</span></p>
+
+            <div class="ph-block mt-10">
+              <h3 class="type-h5">Safety on the rig</h3>
+              <p class="mt-2 type-small text-muted">
+                Details of rigging inspections, crash mats, spotting and class sizes will appear here once confirmed by the studio.
+              </p>
+              <p class="mt-3"><span class="ph">Safety approach — TBC</span></p>
+            </div>
+
+            <a href="classes.html" class="link-arrow mt-8">
+              See classes by level
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         ACT V — PERFORMANCE & SHOWCASES
+         Text on the inline-start side, full-bleed stage image on the end side.
+         ================================================================ -->
+    <section id="showcases" class="on-stage relative isolate overflow-hidden bg-stage lg:min-h-[44rem]" aria-labelledby="showcases-title">
+      <div class="media relative aspect-[4/5] sm:aspect-[16/10] lg:absolute lg:inset-y-0 lg:end-0 lg:aspect-auto lg:w-1/2">
+        <img
+          src="https://images.unsplash.com/photo-1762271232481-30bd8d3342fa?auto=format&amp;fit=crop&amp;w=1200&amp;q=70"
+          srcset="https://images.unsplash.com/photo-1762271232481-30bd8d3342fa?auto=format&amp;fit=crop&amp;w=640&amp;q=70 640w,
+                  https://images.unsplash.com/photo-1762271232481-30bd8d3342fa?auto=format&amp;fit=crop&amp;w=1000&amp;q=70 1000w,
+                  https://images.unsplash.com/photo-1762271232481-30bd8d3342fa?auto=format&amp;fit=crop&amp;w=1400&amp;q=70 1400w"
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          width="1400" height="2100"
+          alt="Two performers in a duet on red silks, lit in deep orange against a projected night sky."
+          class="object-[50%_40%] sm:object-[50%_35%]"
+          loading="lazy" decoding="async">
+      </div>
+
+      <div class="shell section-y relative">
+        <div class="lg:w-1/2 lg:pe-16 xl:pe-24" data-reveal>
+          <p class="eyebrow text-crimson-light">04 — Performance</p>
+          <h2 id="showcases-title" class="type-h1 mt-6">
+            Train for the <span class="accent-serif text-crimson-light">stage.</span>
+          </h2>
+          <p class="type-lead mt-6 max-w-[34rem] text-on-stage-muted">
+            Performing is part of the journey. Showcases give students the chance to present their work to an audience — in costume, under lights.
+          </p>
+
+          <div class="mt-10 max-w-[34rem] border-t border-stage-line pt-6">
+            <p class="eyebrow text-on-stage-muted">Upcoming showcase</p>
+            <dl class="mt-5 grid grid-cols-[6rem_1fr] gap-x-6 gap-y-4 type-small">
+              <dt class="text-on-stage-muted">Event</dt>
+              <dd><span class="ph">Showcase name — TBC</span></dd>
+              <dt class="text-on-stage-muted">Date</dt>
+              <dd><span class="ph">Date — TBC</span></dd>
+              <dt class="text-on-stage-muted">Venue</dt>
+              <dd><span class="ph">Venue — TBC</span></dd>
+              <dt class="text-on-stage-muted">Open to</dt>
+              <dd><span class="ph">Eligibility — TBC</span></dd>
+            </dl>
+          </div>
+
+          <div class="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-8">
+            <a href="contact.html" class="btn btn-secondary">Ask about showcases</a>
+            <a href="portal/index.html" class="link-arrow">
+              Students: register in the portal
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         ACT VI — COMMUNITY & INSTRUCTORS
+         ================================================================ -->
+    <section id="community" class="section-y bg-chalk" aria-labelledby="community-title">
+      <div class="shell">
+        <div class="grid gap-12 lg:grid-cols-12 lg:gap-8">
+
+          <div class="lg:col-span-6">
+            <div data-reveal>
+              <p class="eyebrow text-crimson">05 — Community</p>
+              <h2 id="community-title" class="type-h1 mt-6">
+                The people on the <span class="accent-serif text-crimson">floor.</span>
+              </h2>
+              <p class="type-lead mt-6 max-w-[34rem] text-muted">
+                Behind every climb is a coach watching your form and a room of people learning to trust their own strength.
+              </p>
+            </div>
+
+            <figure class="ph-block mt-10 max-w-[34rem]" data-reveal>
+              <p class="type-quote text-muted">“Student or instructor quote.”</p>
+              <figcaption class="mt-4 flex flex-wrap items-center gap-3 type-small text-muted">
+                <span>— Name, role</span>
+                <span class="ph">Real quote to be supplied</span>
+              </figcaption>
+            </figure>
+
+            <a href="instructors.html" class="link-arrow mt-8">
+              Meet the instructors
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+
+            <figure class="mt-12 lg:mt-14" data-reveal>
+              <div class="media aspect-[3/2]">
+                <img
+                  src="https://images.unsplash.com/photo-1762363018712-9aa9b90a620d?auto=format&amp;fit=crop&amp;w=1100&amp;q=70"
+                  srcset="https://images.unsplash.com/photo-1762363018712-9aa9b90a620d?auto=format&amp;fit=crop&amp;w=600&amp;q=70 600w,
+                          https://images.unsplash.com/photo-1762363018712-9aa9b90a620d?auto=format&amp;fit=crop&amp;w=1100&amp;q=70 1100w"
+                  sizes="(min-width: 1024px) 45vw, 100vw"
+                  width="1100" height="733"
+                  alt="Two acrobats perform together high above the stage in front of a wall of bright red and white lights."
+                  class="object-[55%_50%]"
+                  loading="lazy" decoding="async">
+              </div>
+            </figure>
+          </div>
+
+          <div class="lg:col-span-5 lg:col-start-8">
+            <figure data-reveal>
+              <div class="media aspect-[4/5]">
+                <img
+                  src="https://images.unsplash.com/photo-1762363018535-cc566dc80910?auto=format&amp;fit=crop&amp;w=1000&amp;q=70"
+                  srcset="https://images.unsplash.com/photo-1762363018535-cc566dc80910?auto=format&amp;fit=crop&amp;w=600&amp;q=70 600w,
+                          https://images.unsplash.com/photo-1762363018535-cc566dc80910?auto=format&amp;fit=crop&amp;w=1000&amp;q=70 1000w"
+                  sizes="(min-width: 1024px) 38vw, 100vw"
+                  width="1000" height="1500"
+                  alt="An aerialist hangs upside down in a red silk above a fellow performer, watched by an audience in silhouette."
+                  class="object-[50%_30%]"
+                  loading="lazy" decoding="async">
+              </div>
+            </figure>
+            <figure class="ms-auto mt-8 w-[90%]" data-reveal>
+              <div class="media aspect-[3/2]">
+                <img
+                  src="https://images.unsplash.com/photo-1756314354647-6e77562d9788?auto=format&amp;fit=crop&amp;w=800&amp;q=70"
+                  srcset="https://images.unsplash.com/photo-1756314354647-6e77562d9788?auto=format&amp;fit=crop&amp;w=500&amp;q=70 500w,
+                          https://images.unsplash.com/photo-1756314354647-6e77562d9788?auto=format&amp;fit=crop&amp;w=800&amp;q=70 800w"
+                  sizes="(min-width: 1024px) 30vw, 78vw"
+                  width="800" height="533"
+                  alt="A student hangs inverted from aerial rings in a training hall, with crash mats on the floor below."
+                  class="object-[45%_45%]"
+                  loading="lazy" decoding="async">
+              </div>
+            </figure>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         FINALE — CALL TO ACTION (centred: a closing statement)
+         ================================================================ -->
+    <section class="on-stage section-y relative bg-stage" aria-labelledby="cta-title">
+      <div class="pointer-events-none absolute inset-x-0 top-0" aria-hidden="true">
+        <div class="shell relative">
+          <span class="the-line absolute start-1/2 top-0 block h-[clamp(2.5rem,1rem+6vw,7rem)] text-crimson-light" data-reveal></span>
+        </div>
+      </div>
+
+      <div class="shell pt-[clamp(1rem,0.5rem+2vw,3rem)] text-center">
+        <h2 id="cta-title" class="type-display mx-auto max-w-[15ch]" data-reveal>
+          Your first climb starts on the <span class="accent-serif text-crimson-light">ground.</span>
+        </h2>
+        <div data-reveal>
+          <p class="type-lead mx-auto mt-8 max-w-[34rem] text-balance text-on-stage-muted">
+            Start with a beginner class, or ask us anything before you book.
+          </p>
+          <div class="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            <a href="classes.html#beginner" class="btn btn-primary btn-lg">
+              Book a class
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+            <a href="contact.html" class="btn btn-secondary btn-lg">Ask a question</a>
+          </div>
+          <p class="mt-6"><span class="ph">Trial class &amp; pricing — TBC</span></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

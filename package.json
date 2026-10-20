@@ -1,0 +1,14 @@
+{
+  "name": "aerial-silks-circus-arts-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static website for an aerial silks & circus arts studio. HTML + Tailwind CSS + vanilla JS. Node is used only to compile CSS.",
+  "scripts": {
+    "build": "node node_modules/@tailwindcss/cli/dist/index.mjs -i ./src/input.css -o ./assets/css/styles.css --minify",
+    "watch": "node node_modules/@tailwindcss/cli/dist/index.mjs -i ./src/input.css -o ./assets/css/styles.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.3",
+    "tailwindcss": "4.3.3"
+  }
+}
