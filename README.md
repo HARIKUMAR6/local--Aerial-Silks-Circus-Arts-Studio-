@@ -28,6 +28,8 @@ npm run watch    # rebuild on change while editing
 
 ```
 index.html                Home 1 — "the performance" (dark, theatrical)
+portal/index.html         Student portal (DEMO): Sign in + Register forms, validation only — no authentication, nothing stored
+portal/dashboard.html     Student dashboard (DEMO): sample data, in-page interactions only — no account, nothing saved
 contact.html              Contact — five sections: Hero, Get in touch, Send an enquiry (demo form), Find the studio (Leaflet map), Before you reach out
 instructors.html          Instructors — five sections: Hero, Teaching philosophy, Guidance, The practice, Start a conversation
 classes.html              Classes — five sections: Hero, Ways to train, Learning journey, The practice, Start a conversation
@@ -37,9 +39,12 @@ src/input.css             Design tokens (@theme), light/dark theme tokens, share
 assets/css/styles.css     Compiled output — do not edit by hand
 assets/js/preferences.js  Theme (light/dark) + direction (ltr/rtl): saved choice, system fallback, applied before first paint
 assets/js/site-chrome.js  Shared <site-header> and <site-footer> for every public page
+assets/js/portal.js       Portal tabs, show/hide password, validation; honest demo messages, clears passwords, stores nothing
+assets/js/dashboard.js    Dashboard views, filters, progress, preferences — sample data held in memory only
 assets/js/contact.js      Contact form validation (demo — nothing is sent) and Leaflet map; set STUDIO_LOCATION once the address is confirmed
 assets/js/home.js         Home page interactions (Home 1 discipline image reveal; scroll reveals on both homepages)
 assets/images/home-1/     Home 1 photography — all images stored locally at 800w and 1600w (see Image credits)
+assets/images/portal/     Portal photography, stored locally at 800w and 1600w
 assets/images/contact/    Contact photography, stored locally at 800w and 1600w
 assets/images/instructors/ Instructors photography, stored locally at 800w and 1600w
 assets/images/classes/    Classes photography, stored locally at 800w and 1600w (see Image credits)
@@ -84,7 +89,8 @@ Nav items and links live in one place: `NAV_ITEMS` / `HOME_MENU` / `LINKS` at th
 | Classes (`classes.html`) | Built — awaiting review |
 | Instructors (`instructors.html`) | Built — awaiting review |
 | Contact (`contact.html`) | Built — awaiting review. Form is a labelled demonstration (no backend); map shows no studio pin |
-| Portal (`portal/index.html`), Dashboard (`portal/dashboard.html`) | Not built — header "Student login" and "Dashboard" links are ready for them |
+| Portal (`portal/index.html`) | Built — static frontend demo. **No backend, database, API or authentication.** |
+| Dashboard (`portal/dashboard.html`) | Built — static frontend demo with sample data. **Not connected to any account.** |
 
 Links to unbuilt pages currently lead to a missing file; that is expected until each page is built.
 
@@ -266,3 +272,17 @@ Verified unique against Home 1, Home 2, About, Classes and Instructors.
 [OpenStreetMap](https://www.openstreetmap.org/copyright) standard tiles — no API key. Attribution is shown on the map.
 OSM's tile usage policy requires a valid Referer, which a deployed site sends; opening the file directly from disk may not.
 For high traffic, switch to a dedicated tile provider.
+
+### Student portal & dashboard (`portal/`)
+
+**Static demos only.** No backend, database, API, authentication service, credentials or secrets exist in this project.
+- Portal forms validate in the browser, then show: "This is a frontend demo. Authentication is not connected, and no account was created."
+  Password fields are cleared after submit; nothing typed is stored (no localStorage/sessionStorage/cookies) or sent.
+- Dashboard data (classes, skills, activity, profile) is hard-coded sample data in `assets/js/dashboard.js`, with dates generated
+  relative to today. Interactions change the page in memory only; a reload resets everything. The only persisted value is the
+  site-wide theme/direction preference used by every page.
+- To make these real you would need: an auth provider, a database for bookings/progress, server-side validation and secure sessions.
+
+| File (`assets/images/portal/`) | Used in | Source (Pexels) | Photographer (Pexels username) |
+|---|---|---|---|
+| `portal-silks-spotlight` | Portal brand panel (background) | [10347382](https://www.pexels.com/photo/a-person-performing-on-stage-10347382/) | dany-lovehill |

@@ -18,6 +18,7 @@
 @import "tailwindcss";
 
 @source "../*.html";
+@source "../portal/*.html";
 @source "../assets/js";
 
 /* --------------------------------------------------------------------------
@@ -719,30 +720,60 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
     color: var(--color-crimson-light);
   }
 
-  .pref-btn {
-    display: flex;
-    flex: 1 1 0;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
-    min-height: 3rem;
-    padding: 0.5rem 1rem;
+  /* Two-option segmented control (menu panels) */
+  .seg {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     border: 1px solid var(--color-stage-line-strong);
-    border-radius: 2px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .seg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding-inline: 0.75rem;
     background: transparent;
     color: var(--color-on-stage);
     font-size: 0.8125rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     cursor: pointer;
   }
-  .pref-btn:hover { background: var(--color-stage-3); }
-  .pref-state {
+  .seg-btn + .seg-btn { border-inline-start: 1px solid var(--color-stage-line-strong); }
+  .seg-btn:hover { background: var(--color-stage-3); }
+  .seg-btn[aria-pressed="true"] { background: var(--color-on-stage); color: var(--color-ink); }
+  .seg-btn svg { width: 1rem; height: 1rem; }
+
+  /* Scroll-to-top */
+  .scroll-top {
+    position: fixed;
+    inset-inline-end: max(1rem, env(safe-area-inset-right));
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    z-index: 30;
     display: inline-flex;
     align-items: center;
-    gap: 0.375rem;
-    color: var(--color-on-stage-muted);
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border: 1.5px solid var(--color-on-stage-muted);
+    border-radius: 2px;
+    background: var(--color-stage);
+    color: var(--color-on-stage);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(0.5rem);
+    transition: opacity 200ms var(--ease-release), transform 200ms var(--ease-release), background-color 150ms var(--ease-release);
+    --focus: var(--color-vermilion);
+  }
+  .scroll-top[data-visible] { opacity: 1; transform: none; }
+  .scroll-top:hover { background: var(--color-vermilion); border-color: var(--color-vermilion); color: var(--color-ink); }
+  .scroll-top[hidden] { display: none; }
+  @media (width >= 64rem) {
+    .scroll-top { inset-inline-end: 1.75rem; bottom: 1.75rem; }
   }
 }
 
@@ -977,3 +1008,110 @@ html[data-theme="dark"] .map-frame .leaflet-tile-pane {
 }
 .map-frame .leaflet-control-attribution a { color: var(--color-crimson); }
 .map-frame .leaflet-container { font-family: var(--font-sans); background: var(--color-sand); }
+
+/* --------------------------------------------------------------------------
+   Portal & dashboard (static demo app)
+   -------------------------------------------------------------------------- */
+@layer components {
+  /* Toggle switch: <button role="switch" aria-checked> */
+  .switch {
+    position: relative;
+    flex: none;
+    width: 2.75rem;
+    height: 1.5rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-line-strong);
+    background: var(--color-sand);
+    cursor: pointer;
+    transition: background-color 150ms var(--ease-release);
+  }
+  .switch::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    inset-inline-start: 0.1875rem;
+    width: 1.0625rem;
+    height: 1.0625rem;
+    border-radius: 9999px;
+    background: var(--color-fg);
+    transform: translateY(-50%);
+    transition: inset-inline-start 150ms var(--ease-release);
+  }
+  .switch[aria-checked="true"] { background: var(--color-teal); border-color: var(--color-teal); }
+  .switch[aria-checked="true"]::after { inset-inline-start: 1.4375rem; background: var(--color-white); }
+  :root[data-theme="dark"] .switch[aria-checked="true"] { background: var(--color-teal-light); border-color: var(--color-teal-light); }
+  :root[data-theme="dark"] .switch[aria-checked="true"]::after { background: var(--color-ink); }
+
+  /* Filter chips: <button aria-pressed> */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.5rem;
+    padding: 0.375rem 1rem;
+    border: 1px solid var(--color-line-strong);
+    border-radius: 9999px;
+    background: transparent;
+    color: var(--color-fg);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .chip:hover { background: var(--color-sand); }
+  .chip[aria-pressed="true"], .chip[aria-selected="true"] { background: var(--color-fg); border-color: var(--color-fg); color: var(--color-chalk); }
+
+  /* Password field with show/hide button */
+  .pw-wrap { position: relative; }
+  .pw-wrap .field { padding-inline-end: 5.5rem; }
+  .pw-toggle {
+    position: absolute;
+    inset-inline-end: 0.25rem;
+    bottom: 0.25rem;
+    min-height: 2.5rem;
+    padding-inline: 0.75rem;
+    border-radius: 2px;
+    background: transparent;
+    color: var(--color-crimson);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .pw-toggle:hover { background: var(--color-sand); }
+
+  /* App navigation item */
+  .app-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.875rem;
+    border-radius: 4px;
+    color: var(--color-on-stage-muted);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .app-nav-link:hover { background: var(--color-stage-3); color: var(--color-on-stage); }
+  .app-nav-link[aria-current="page"] { background: var(--color-stage-3); color: var(--color-on-stage); box-shadow: inset 3px 0 0 var(--color-vermilion); }
+  [dir="rtl"] .app-nav-link[aria-current="page"] { box-shadow: inset -3px 0 0 var(--color-vermilion); }
+
+  .tab-link {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.125rem;
+    min-height: 3.5rem;
+    color: var(--color-on-stage-muted);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .tab-link[aria-current="page"] { color: var(--color-on-stage); box-shadow: inset 0 3px 0 var(--color-vermilion); }
+}
+
+/* RTL: notices and form messages are English sentences too — keep their punctuation order */
+[dir="rtl"] :is(.form-status, [role="note"]) { unicode-bidi: plaintext; text-align: start; }

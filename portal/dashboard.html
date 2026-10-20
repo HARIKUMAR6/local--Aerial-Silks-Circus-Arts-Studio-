@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard — Aerial Silks &amp; Circus Arts Studio (temporary name)</title>
+  <meta name="description" content="Student dashboard: classes, training progress, activity and preferences.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#16120f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%2316120f'/%3E%3Ccircle cx='20' cy='4' r='2.4' fill='%23ff5a1f'/%3E%3Cpath d='M20 6.5C27 11 27 16 20 20.5S10 28 9 38' fill='none' stroke='%23f2ece3' stroke-width='2.75' stroke-linecap='round'/%3E%3Cpath d='M20 6.5C13 11 13 16 20 20.5S30 28 31 38' fill='none' stroke='%23e8566b' stroke-width='2.75' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Instrument+Serif:ital@1&amp;display=swap">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <script src="../assets/js/preferences.js"></script>
+  <script src="../assets/js/dashboard.js" defer></script>
+</head>
+
+<!--
+  STUDENT DASHBOARD — static frontend demonstration with SAMPLE DATA.
+  No backend, account, authentication or storage of member data. Every change made
+  here lives only in the current page and is lost on reload (see assets/js/dashboard.js).
+-->
+<body class="bg-chalk">
+  <a class="skip-link" href="#app-main">Skip to content</a>
+
+  <div class="min-h-svh lg:grid lg:grid-cols-[16rem_minmax(0,1fr)]">
+
+    <!-- ============================ Sidebar (desktop) ============================ -->
+    <aside class="on-stage hidden bg-stage lg:sticky lg:top-0 lg:flex lg:h-svh lg:flex-col lg:px-4 lg:py-6" aria-label="Dashboard">
+      <div class="brand px-2" role="img" aria-label="Aerial Silks &amp; Circus Arts Studio">
+        <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true" focusable="false"><circle cx="20" cy="4" r="2.4" fill="#ff5a1f"/><path d="M20 6.5C27 11 27 16 20 20.5S10 28 9 38" stroke="#f2ece3" stroke-width="2.75" stroke-linecap="round"/><path d="M20 6.5C13 11 13 16 20 20.5S30 28 31 38" stroke="#e8566b" stroke-width="2.75" stroke-linecap="round"/></svg>
+        <span class="brand-text" aria-hidden="true"><span class="brand-name">Aerial Silks &amp;</span><span class="brand-sub">Circus Arts Studio</span></span>
+      </div>
+
+      <nav class="mt-10" aria-label="Dashboard sections">
+        <ul class="space-y-1" role="list" data-nav="side"></ul>
+      </nav>
+
+      <div class="mt-auto space-y-3 border-t border-stage-line pt-5">
+        <div class="flex gap-2 px-2">
+          <button type="button" class="icon-btn" data-theme-toggle aria-pressed="false" aria-label="Dark theme">
+            <span class="when-light"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.25M12 19.25v2.25M2.5 12h2.25M19.25 12h2.25M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg></span>
+            <span class="when-dark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4 8.2 8.2 0 1 0 20 14.2Z"/></svg></span>
+          </button>
+          <button type="button" class="icon-btn" data-dir-toggle><span class="sr-only">Text direction:</span><span class="when-ltr">LTR</span><span class="when-rtl">RTL</span></button>
+        </div>
+        <a href="index.html" class="app-nav-link">
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+          Logout
+        </a>
+      </div>
+    </aside>
+
+    <div class="flex min-w-0 flex-col">
+
+      <!-- ============================ Top bar ============================ -->
+      <header class="on-stage sticky top-0 z-30 flex h-16 items-center justify-between gap-3 border-b border-stage-line bg-stage px-[var(--gutter-x)] lg:hidden">
+        <div class="brand" role="img" aria-label="Aerial Silks &amp; Circus Arts Studio">
+          <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true" focusable="false"><circle cx="20" cy="4" r="2.4" fill="#ff5a1f"/><path d="M20 6.5C27 11 27 16 20 20.5S10 28 9 38" stroke="#f2ece3" stroke-width="2.75" stroke-linecap="round"/><path d="M20 6.5C13 11 13 16 20 20.5S30 28 31 38" stroke="#e8566b" stroke-width="2.75" stroke-linecap="round"/></svg>
+        <span class="brand-text" aria-hidden="true"><span class="brand-name">Aerial Silks &amp;</span><span class="brand-sub">Circus Arts Studio</span></span>
+        </div>
+        <button type="button" class="menu-toggle relative -me-2 inline-flex size-11 flex-col items-center justify-center gap-[5px] text-on-stage" aria-expanded="false" aria-controls="app-menu" data-app-menu-toggle>
+          <span class="sr-only">Menu</span>
+          <span class="menu-toggle-bar" aria-hidden="true"></span>
+          <span class="menu-toggle-bar" aria-hidden="true"></span>
+          <span class="menu-toggle-bar" aria-hidden="true"></span>
+        </button>
+      </header>
+
+      <!-- Mobile navigation panel -->
+      <div id="app-menu" class="on-stage fixed inset-x-0 bottom-0 top-16 z-20 overflow-y-auto overscroll-contain bg-stage lg:hidden" hidden>
+        <div class="px-[var(--gutter-x)] py-6">
+          <nav aria-label="Dashboard sections">
+            <ul class="space-y-1" role="list" data-nav="menu"></ul>
+          </nav>
+          <div class="mt-6 border-t border-stage-line pt-6">
+            <div class="grid grid-cols-1 gap-5 min-[26rem]:grid-cols-2">
+              <div role="group" aria-labelledby="app-theme-label">
+                <p id="app-theme-label" class="eyebrow text-on-stage-muted">Theme</p>
+                <div class="seg mt-2"><button type="button" class="seg-btn" data-theme-set="light" aria-pressed="false"><span>Light</span></button><button type="button" class="seg-btn" data-theme-set="dark" aria-pressed="false"><span>Dark</span></button></div>
+              </div>
+              <div role="group" aria-labelledby="app-dir-label">
+                <p id="app-dir-label" class="eyebrow text-on-stage-muted">Direction</p>
+                <div class="seg mt-2"><button type="button" class="seg-btn" data-dir-set="ltr" aria-pressed="false"><span>LTR</span></button><button type="button" class="seg-btn" data-dir-set="rtl" aria-pressed="false"><span>RTL</span></button></div>
+              </div>
+            </div>
+          </div>
+          <a href="index.html" class="app-nav-link mt-6 border border-stage-line-strong">
+            <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+            Logout
+          </a>
+        </div>
+      </div>
+
+      <main id="app-main" tabindex="-1" class="w-full max-w-[75rem] flex-1 px-[var(--gutter-x)] py-8 lg:px-10 lg:py-10">
+
+        <!-- ============================ Overview ============================ -->
+        <section data-view="overview" aria-labelledby="v-overview">
+          <p class="eyebrow text-crimson">Overview</p>
+          <h1 id="v-overview" class="type-h2 mt-2" tabindex="-1">Welcome back, <span class="accent-serif text-crimson" data-display-name>Student</span>.</h1>
+          <p class="mt-2 text-muted">Here's your week of training.</p>
+
+          <dl class="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded border border-line bg-line lg:grid-cols-4" data-stats></dl>
+
+          <div class="mt-8 grid grid-cols-[minmax(0,1fr)] gap-6 xl:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
+            <section class="rounded border border-line bg-paper p-5 sm:p-6" aria-labelledby="ov-next">
+              <div class="flex items-baseline justify-between gap-4">
+                <h2 id="ov-next" class="type-h5">Next classes</h2>
+                <a href="#schedule" class="link-arrow type-small">Full schedule</a>
+              </div>
+              <ul class="mt-4 divide-y divide-line" role="list" data-next-classes></ul>
+            </section>
+            <section class="rounded border border-line bg-paper p-5 sm:p-6" aria-labelledby="ov-progress">
+              <div class="flex items-baseline justify-between gap-4">
+                <h2 id="ov-progress" class="type-h5">Current stage</h2>
+                <a href="#progress" class="link-arrow type-small">Progress</a>
+              </div>
+              <div class="mt-5 flex items-center gap-5" data-stage-summary></div>
+            </section>
+          </div>
+        </section>
+
+        <!-- ============================ Schedule ============================ -->
+        <section data-view="schedule" aria-labelledby="v-schedule" hidden>
+          <p class="eyebrow text-crimson">Schedule</p>
+          <h1 id="v-schedule" class="type-h2 mt-2" tabindex="-1">Your classes</h1>
+          <p class="mt-2 text-muted">Your upcoming and past sessions.</p>
+
+          <div class="mt-6 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex gap-1 rounded-full border border-line-strong p-1" role="tablist" aria-label="Class period">
+              <button type="button" role="tab" class="chip border-0" aria-selected="true" data-period="upcoming" aria-controls="class-list">Upcoming</button>
+              <button type="button" role="tab" class="chip border-0" aria-selected="false" tabindex="-1" data-period="past" aria-controls="class-list">Past</button>
+            </div>
+            <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by class type" data-type-filters></div>
+          </div>
+
+          <p class="mt-4 type-small text-muted" role="status" data-class-count></p>
+          <ul id="class-list" class="mt-3 divide-y divide-line rounded border border-line bg-paper" role="list" data-class-list></ul>
+        </section>
+
+        <!-- ============================ Progress ============================ -->
+        <section data-view="progress" aria-labelledby="v-progress" hidden>
+          <p class="eyebrow text-crimson">Progress</p>
+          <h1 id="v-progress" class="type-h2 mt-2" tabindex="-1">Training progress</h1>
+          <p class="mt-2 text-muted">Tick skills to see the bars update.</p>
+          <div class="mt-8 grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-3" data-stages></div>
+        </section>
+
+        <!-- ============================ Activity ============================ -->
+        <section data-view="activity" aria-labelledby="v-activity" hidden>
+          <p class="eyebrow text-crimson">Activity</p>
+          <h1 id="v-activity" class="type-h2 mt-2" tabindex="-1">Recent activity</h1>
+          <div class="mt-6 flex flex-wrap items-end gap-4">
+            <div>
+              <label class="field-label" for="activity-filter">Show</label>
+              <select class="field w-56" id="activity-filter">
+                <option value="all">All activity</option>
+                <option value="class">Classes</option>
+                <option value="practice">Practice</option>
+                <option value="milestone">Milestones</option>
+              </select>
+            </div>
+            <p class="pb-3 type-small text-muted" role="status" data-activity-count></p>
+          </div>
+          <ol class="mt-6 border-s-2 border-line ps-6" role="list" data-activity></ol>
+        </section>
+
+        <!-- ============================ Preferences ============================ -->
+        <section data-view="preferences" aria-labelledby="v-preferences" hidden>
+          <p class="eyebrow text-crimson">Preferences</p>
+          <h1 id="v-preferences" class="type-h2 mt-2" tabindex="-1">Preferences</h1>
+          <p class="mt-2 text-muted">Changes update this page only. They are not saved to an account.</p>
+
+          <form id="prefs-form" class="mt-8 grid max-w-[44rem] grid-cols-[minmax(0,1fr)] gap-8" novalidate>
+            <fieldset class="rounded border border-line bg-paper p-5 sm:p-6">
+              <legend class="px-1 type-h5">Profile</legend>
+              <div class="grid grid-cols-[minmax(0,1fr)] gap-5 sm:grid-cols-2">
+                <div>
+                  <label class="field-label" for="pref-name">Display name</label>
+                  <input class="field" id="pref-name" name="name" type="text" value="Student" maxlength="40" autocomplete="off" aria-describedby="pref-name-error" aria-invalid="false">
+                  <p class="field-error" id="pref-name-error" hidden><span data-msg></span></p>
+                </div>
+                <div>
+                  <label class="field-label" for="pref-focus">Training focus</label>
+                  <select class="field" id="pref-focus" name="focus">
+                    <option>Strength &amp; conditioning</option>
+                    <option selected>Technique</option>
+                    <option>Flexibility</option>
+                    <option>Choreography</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="rounded border border-line bg-paper p-5 sm:p-6">
+              <legend class="px-1 type-h5">Reminders</legend>
+              <ul class="divide-y divide-line" role="list">
+                <li class="flex items-center justify-between gap-4 py-3"><span id="sw-class-label">Class reminders</span><button type="button" class="switch" role="switch" aria-checked="true" aria-labelledby="sw-class-label" data-switch="class"></button></li>
+                <li class="flex items-center justify-between gap-4 py-3"><span id="sw-practice-label">Weekly practice summary</span><button type="button" class="switch" role="switch" aria-checked="false" aria-labelledby="sw-practice-label" data-switch="practice"></button></li>
+                <li class="flex items-center justify-between gap-4 py-3"><span id="sw-show-label">Showcase announcements</span><button type="button" class="switch" role="switch" aria-checked="true" aria-labelledby="sw-show-label" data-switch="show"></button></li>
+              </ul>
+            </fieldset>
+
+            <fieldset class="rounded border border-line bg-paper p-5 sm:p-6">
+              <legend class="px-1 type-h5">Display</legend>
+              <p class="type-small text-muted">These use the website's own theme and direction settings.</p>
+              <div class="mt-4 flex flex-wrap items-center gap-6">
+                <div class="flex items-center gap-3"><span id="sw-dark-label">Dark theme</span><button type="button" class="switch" role="switch" aria-checked="false" aria-labelledby="sw-dark-label" data-pref-theme></button></div>
+                <div class="flex items-center gap-3"><span id="sw-rtl-label">Right-to-left</span><button type="button" class="switch" role="switch" aria-checked="false" aria-labelledby="sw-rtl-label" data-pref-dir></button></div>
+              </div>
+            </fieldset>
+
+            <div class="flex flex-wrap items-center gap-4">
+              <button type="submit" class="btn btn-primary">Apply on this page</button>
+              <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+            <div class="form-status" id="prefs-status" tabindex="-1" hidden></div>
+          </form>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+</body>
+</html>

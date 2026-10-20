@@ -34,6 +34,16 @@
     book: "classes.html#timetable", // planned
   };
 
+  /* Footer social profiles. PLACEHOLDERS: fill in each `url` with the studio's
+     verified profile address (e.g. "https://www.instagram.com/<handle>/").
+     While a url is empty, its icon is shown without a link — no dead or invented links. */
+  const SOCIAL_LINKS = [
+    { label: "Instagram", url: "", path: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/>' },
+    { label: "Facebook", url: "", path: '<path d="M14.5 8H17V4.5h-2.5A4 4 0 0 0 10.5 8.5V11H8v3.5h2.5V21H14v-6.5h2.6l.4-3.5h-3V8.8c0-.5.3-.8.5-.8Z"/>' },
+    { label: "YouTube", url: "", path: '<rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="m10 9.5 4.5 2.5-4.5 2.5Z" fill="currentColor"/>' },
+    { label: "TikTok", url: "", path: '<path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2.2 4.4 5 4.6"/>' },
+  ];
+
   const HOME_MENU = [
     { key: "home-1", label: "Home 1", href: LINKS.home },
     { key: "home-2", label: "Home 2", href: LINKS.home2 },
@@ -84,22 +94,20 @@
       <span class="sr-only">Text direction:</span>
       <span class="when-ltr">LTR</span><span class="when-rtl">RTL</span>
     </button>`;
-  // Mobile-menu buttons: full labels with a visible state
-  const themeMenuButton = () => `
-    <button type="button" class="pref-btn" data-theme-toggle aria-pressed="false">
-      <span>Dark theme</span>
-      <span class="pref-state" aria-hidden="true">
-        <span class="when-light">${icon.sun}</span><span class="when-dark">${icon.moon}</span>
-        <span class="when-light">Off</span><span class="when-dark">On</span>
-      </span>
-    </button>`;
-  const dirMenuButton = () => `
-    <button type="button" class="pref-btn" data-dir-toggle aria-pressed="false">
-      <span>Right-to-left</span>
-      <span class="pref-state" aria-hidden="true">
-        <span class="when-ltr">LTR</span><span class="when-rtl">RTL</span>
-      </span>
-    </button>`;
+  // Menu-panel controls: compact two-option segmented controls (no helper text)
+  const segment = (attr, value, content, pressed = "false") =>
+    `<button type="button" class="seg-btn" ${attr}="${value}" aria-pressed="${pressed}">${content}</button>`;
+  const prefControls = () => `
+    <div class="grid grid-cols-1 gap-5 min-[26rem]:grid-cols-2">
+      <div role="group" aria-labelledby="pref-theme-label">
+        <p id="pref-theme-label" class="eyebrow text-on-stage-muted">Theme</p>
+        <div class="seg mt-2">${segment("data-theme-set", "light", `${icon.sun}<span>Light</span>`)}${segment("data-theme-set", "dark", `${icon.moon}<span>Dark</span>`)}</div>
+      </div>
+      <div role="group" aria-labelledby="pref-dir-label">
+        <p id="pref-dir-label" class="eyebrow text-on-stage-muted">Direction</p>
+        <div class="seg mt-2">${segment("data-dir-set", "ltr", "<span>LTR</span>")}${segment("data-dir-set", "rtl", "<span>RTL</span>")}</div>
+      </div>
+    </div>`;
 
   const navLink = (item, current, cls) =>
     `<a href="${item.href}" class="${cls}"${item.key === current ? ' aria-current="page"' : ""}>${item.label}</a>`;
@@ -249,9 +257,7 @@
                 <a href="${LINKS.book}" class="btn btn-primary btn-sm ms-2 whitespace-nowrap">Book a class</a>
               </div>
 
-              <div class="flex items-center gap-2 xl:hidden">
-                ${themeIconButton()}
-                ${dirIconButton("hidden min-[24rem]:inline-flex")}
+              <div class="flex items-center xl:hidden">
                 <button type="button"
                   class="menu-toggle relative z-50 -me-2 inline-flex size-11 flex-col items-center justify-center gap-[5px] text-on-stage"
                   aria-expanded="false" aria-controls="mobile-menu">
@@ -295,9 +301,8 @@
               </ol>
             </nav>
 
-            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              ${themeMenuButton()}
-              ${dirMenuButton()}
+            <div class="mt-8 border-t border-stage-line pt-6">
+              ${prefControls()}
             </div>
 
             <div class="mt-auto flex flex-col gap-3 pt-8 sm:flex-row">
@@ -311,6 +316,18 @@
     /* -------------------------------------------------------- Preferences */
     onPrefClick(e) {
       if (!window.StudioPrefs) return;
+      const th = e.target.closest("[data-theme-set]");
+      const di = e.target.closest("[data-dir-set]");
+      if (th) {
+        if (window.StudioPrefs.state().theme !== th.dataset.themeSet) window.StudioPrefs.toggleTheme();
+        this.announce(window.StudioPrefs.state().theme === "dark" ? "Dark theme on" : "Light theme on");
+        return;
+      }
+      if (di) {
+        if (window.StudioPrefs.state().dir !== di.dataset.dirSet) window.StudioPrefs.toggleDir();
+        this.announce(window.StudioPrefs.state().dir === "rtl" ? "Right-to-left layout on" : "Left-to-right layout on");
+        return;
+      }
       if (e.target.closest("[data-theme-toggle]")) {
         window.StudioPrefs.toggleTheme();
         this.announce(window.StudioPrefs.state().theme === "dark" ? "Dark theme on" : "Light theme on");
@@ -326,6 +343,8 @@
 
     syncPrefs() {
       const { theme, dir } = window.StudioPrefs.state();
+      this.querySelectorAll("[data-theme-set]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.themeSet === theme)));
+      this.querySelectorAll("[data-dir-set]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.dirSet === dir)));
       this.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
         if (btn.hasAttribute("aria-pressed")) btn.setAttribute("aria-pressed", String(theme === "dark"));
         btn.title = theme === "dark" ? "Switch to light theme" : "Switch to dark theme";
@@ -426,69 +445,103 @@
       this._ready = true;
 
       const year = new Date().getFullYear();
-      const ph = (text) => `<span class="ph">${text}</span>`;
-      const footLink = (href, label) =>
-        `<li><a href="${href}" class="inline-flex min-h-11 items-center text-on-stage no-underline hover:text-crimson-light hover:underline hover:underline-offset-4">${label}</a></li>`;
+
+      // An icon becomes a link only once its verified profile URL is set in SOCIAL_LINKS.
+      const social = SOCIAL_LINKS.map(({ label, url, path }) => {
+        const glyph = `<svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${path}</svg>`;
+        const base = "inline-flex size-11 items-center justify-center rounded-full border border-stage-line-strong text-on-stage";
+        return url
+          ? `<li><a href="${url}" target="_blank" rel="noopener noreferrer" class="${base} transition-colors hover:border-on-stage hover:bg-stage-3" aria-label="${label} (opens in a new tab)">${glyph}</a></li>`
+          : `<li><span class="${base}" role="img" aria-label="${label}">${glyph}</span></li>`;
+      }).join("");
+
+      // Plain facts only — each is stated on the studio's own pages. No contact details, no links.
+      const facts = (items) =>
+        `<ul class="mt-4 space-y-2.5" role="list">${items
+          .map((t) => `<li class="flex gap-3 type-small text-on-stage"><span class="mt-[0.6em] block h-0.5 w-3 shrink-0 bg-crimson-light" aria-hidden="true"></span><span>${t}</span></li>`)
+          .join("")}</ul>`;
 
       this.innerHTML = `
         <footer class="on-stage bg-stage">
-          <div class="shell border-t border-stage-line pt-16 pb-10 lg:pt-24">
-            <div class="grid gap-12 lg:grid-cols-12 lg:gap-8">
+          <div class="shell border-t border-stage-line pt-12 pb-8 lg:pt-14">
+            <div class="grid grid-cols-[minmax(0,1fr)] gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
 
-              <div class="lg:col-span-5">
-                <a href="${LINKS.home}" class="inline-flex items-center gap-4 text-on-stage no-underline" aria-label="${BRAND.full} — home">
-                  ${logoMark("size-14 shrink-0 sm:size-16")}
-                  <span class="text-[clamp(2rem,1.2rem+3.5vw,3.75rem)] font-black uppercase leading-[0.88] [direction:ltr] [font-stretch:62%] rtl:text-right" aria-hidden="true">
+              <div class="sm:col-span-2 lg:col-span-4">
+                <div class="flex items-center gap-4">
+                  ${logoMark("size-12 shrink-0")}
+                  <p class="text-[clamp(1.5rem,1.2rem+1vw,2rem)] font-black uppercase leading-[0.9] [direction:ltr] [font-stretch:62%] rtl:text-right">
                     ${BRAND.line1}<br>${BRAND.line2}
-                  </span>
-                </a>
-                <p class="mt-5">${ph("Temporary name &amp; logo — TBC")}</p>
-                <a href="${LINKS.book}" class="btn btn-primary mt-8">Book a class ${icon.arrow}</a>
+                  </p>
+                </div>
+                <p class="mt-5 max-w-[26rem] text-on-stage">An aerial silks and circus arts studio, built on strength and expression in equal measure.</p>
               </div>
 
-              <nav aria-label="Footer" class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-7">
-                <div>
-                  <h2 class="eyebrow text-on-stage-muted">Explore</h2>
-                  <ul class="mt-4" role="list">
-                    ${footLink(LINKS.home, "Home")}
-                    ${NAV_ITEMS.filter((item) => item.key !== "dashboard").map((item) => footLink(item.href, item.label)).join("")}
-                  </ul>
-                </div>
-                <div>
-                  <h2 class="eyebrow text-on-stage-muted">Students</h2>
-                  <ul class="mt-4" role="list">
-                    ${footLink(LINKS.login, "Student login")}
-                    ${footLink(LINKS.dashboard, "Dashboard")}
-                    ${footLink(LINKS.book, "Book a class")}
-                    ${footLink("classes.html", "Find your level")}
-                  </ul>
-                </div>
-                <div class="col-span-2 sm:col-span-1">
-                  <h2 class="eyebrow text-on-stage-muted">Visit</h2>
-                  <address class="mt-4 space-y-3 not-italic type-small text-on-stage-muted">
-                    <p>${ph("Studio address — TBC")}</p>
-                    <p>${ph("Opening hours — TBC")}</p>
-                    <p>${ph("Phone — TBC")}</p>
-                    <p>${ph("Email — TBC")}</p>
-                  </address>
-                  <h2 class="eyebrow mt-8 text-on-stage-muted">Follow</h2>
-                  <p class="mt-3">${ph("Social channels — TBC")}</p>
-                </div>
-              </nav>
+              <div class="lg:col-span-3">
+                <h2 class="eyebrow text-on-stage-muted">The studio</h2>
+                ${facts([
+                  "Aerial silks is the core discipline",
+                  "Training from first climb to performance",
+                  "Strength and expression, in equal measure",
+                ])}
+              </div>
+
+              <div class="lg:col-span-3">
+                <h2 class="eyebrow text-on-stage-muted">Good to know</h2>
+                ${facts([
+                  "Everyone starts low, then builds height",
+                  "Technique comes before height",
+                  "Progress at your own pace",
+                ])}
+              </div>
+
+              <div class="sm:col-span-2 lg:col-span-2">
+                <h2 class="eyebrow text-on-stage-muted">Follow</h2>
+                <ul class="mt-4 grid w-fit grid-cols-4 gap-3 sm:gap-2.5 lg:grid-cols-2" role="list">${social}</ul>
+              </div>
             </div>
 
-            <div class="mt-16 flex flex-col gap-4 border-t border-stage-line pt-6 type-caption text-on-stage-muted md:flex-row md:items-center md:justify-between">
-              <p>&copy; ${year} ${BRAND.full} (temporary name). Placeholder photography from Unsplash and Pexels, used under their free licences.</p>
-              <ul class="flex flex-wrap items-center gap-x-6 gap-y-2" role="list">
-                <li>${ph("Privacy policy — TBC")}</li>
-                <li>${ph("Terms — TBC")}</li>
-                <li><a href="#top" class="inline-flex min-h-11 items-center text-on-stage underline underline-offset-4 hover:text-crimson-light">Back to top</a></li>
-              </ul>
+            <div class="mt-10 flex flex-col gap-2 border-t border-stage-line pt-6 type-caption text-on-stage-muted sm:flex-row sm:items-center sm:justify-between">
+              <p>&copy; ${year} ${BRAND.full}. All rights reserved.</p>
+              <p>Photography from Unsplash and Pexels.</p>
             </div>
           </div>
         </footer>`;
     }
   }
+
+  /* ------------------------------------------------------ Scroll-to-top button
+     One button per page (this script loads on public pages only). Hidden near
+     the top; smooth scroll unless the visitor prefers reduced motion. */
+  function initScrollTop() {
+    if (document.getElementById("scroll-top")) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.id = "scroll-top";
+    btn.className = "scroll-top";
+    btn.setAttribute("aria-label", "Back to top");
+    btn.hidden = true;
+    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>';
+    document.body.appendChild(btn);
+
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const show = window.scrollY > 480;
+      if (show && btn.hidden) btn.hidden = false;
+      btn.toggleAttribute("data-visible", show);
+      if (!show) btn.hidden = true;
+    };
+    window.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: reduce.matches ? "auto" : "smooth" });
+      const top = document.getElementById("top");
+      if (top) { top.setAttribute("tabindex", "-1"); top.focus({ preventScroll: true }); }
+    });
+    update();
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initScrollTop);
+  else initScrollTop();
 
   customElements.define("site-header", SiteHeader);
   customElements.define("site-footer", SiteFooter);
