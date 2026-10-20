@@ -254,11 +254,11 @@
       $$("[data-theme-toggle]").forEach((b) => b.setAttribute("aria-pressed", String(theme === "dark")));
       $("[data-pref-theme]").setAttribute("aria-checked", String(theme === "dark"));
       $("[data-pref-dir]").setAttribute("aria-checked", String(dir === "rtl"));
-      $("[data-theme-set]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.themeSet === theme)));
-      $("[data-dir-set]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.dirSet === dir)));
+      $$("[data-theme-set]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.themeSet === theme)));
+      $$("[data-dir-set]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.dirSet === dir)));
     };
-    $("[data-theme-set]").forEach((b) => b.addEventListener("click", () => { if (window.StudioPrefs.state().theme !== b.dataset.themeSet) window.StudioPrefs.toggleTheme(); }));
-    $("[data-dir-set]").forEach((b) => b.addEventListener("click", () => { if (window.StudioPrefs.state().dir !== b.dataset.dirSet) window.StudioPrefs.toggleDir(); }));
+    $$("[data-theme-set]").forEach((b) => b.addEventListener("click", () => { if (window.StudioPrefs.state().theme !== b.dataset.themeSet) window.StudioPrefs.toggleTheme(); }));
+    $$("[data-dir-set]").forEach((b) => b.addEventListener("click", () => { if (window.StudioPrefs.state().dir !== b.dataset.dirSet) window.StudioPrefs.toggleDir(); }));
     $$("[data-theme-toggle], [data-pref-theme]").forEach((b) => b.addEventListener("click", () => window.StudioPrefs.toggleTheme()));
     $$("[data-dir-toggle], [data-pref-dir]").forEach((b) => b.addEventListener("click", () => window.StudioPrefs.toggleDir()));
     window.StudioPrefs.onChange(sync);

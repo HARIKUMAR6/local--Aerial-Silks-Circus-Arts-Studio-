@@ -275,7 +275,9 @@ For high traffic, switch to a dedicated tile provider.
 
 ### Student portal & dashboard (`portal/`)
 
-**Static demos only.** No backend, database, API, authentication service, credentials or secrets exist in this project.
+The dashboard has a Logout link (to `portal/index.html`) and, below `lg`, a menu button opening a panel with the dashboard sections, theme/direction controls and Logout. It has no link back to the public site. Logout is only a link to the sign-in page — it ends no session because none exists.
+
+**Static frontends only (user-facing copy no longer says "demo").** No backend, database, API, authentication service, credentials or secrets exist in this project.
 - Portal forms validate in the browser, then show: "This is a frontend demo. Authentication is not connected, and no account was created."
   Password fields are cleared after submit; nothing typed is stored (no localStorage/sessionStorage/cookies) or sent.
 - Dashboard data (classes, skills, activity, profile) is hard-coded sample data in `assets/js/dashboard.js`, with dates generated
