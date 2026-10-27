@@ -334,11 +334,12 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
     align-items: center;
     justify-content: center;
     gap: 0.625rem;
-    min-height: 3rem;
-    padding: 0.75rem 1.5rem;
+    min-height: 3.5rem;
+    padding: 0.75rem 2rem;
     border: 1.5px solid transparent;
     border-radius: 2px;
-    font-size: 0.875rem;
+    white-space: nowrap;
+    font-size: 0.9375rem;
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: 0.06em;
@@ -986,7 +987,6 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
     background-image: linear-gradient(to left, var(--color-stage), transparent 70%) !important;
   }
   .hero-full .hero-copy { width: 58% !important; padding-bottom: 2.5rem !important; }
-  .hero-full .btn-lg { padding-inline: 1rem; font-size: 0.8125rem; letter-spacing: 0.04em; }
   .hero-full .type-display { font-size: clamp(2.75rem, 1.5rem + 5vw, 4.5rem); }
 }
 

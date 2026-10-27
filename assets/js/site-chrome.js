@@ -347,11 +347,11 @@
       this.querySelectorAll("[data-dir-set]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.dirSet === dir)));
       this.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
         if (btn.hasAttribute("aria-pressed")) btn.setAttribute("aria-pressed", String(theme === "dark"));
-        btn.title = theme === "dark" ? "Switch to light theme" : "Switch to dark theme";
+        btn.removeAttribute("title");
       });
       this.querySelectorAll("[data-dir-toggle]").forEach((btn) => {
         if (btn.hasAttribute("aria-pressed")) btn.setAttribute("aria-pressed", String(dir === "rtl"));
-        btn.title = dir === "rtl" ? "Switch to left-to-right layout" : "Switch to right-to-left layout";
+        btn.removeAttribute("title");
       });
     }
 
