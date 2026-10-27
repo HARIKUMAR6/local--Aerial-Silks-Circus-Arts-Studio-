@@ -502,7 +502,6 @@
 
             <div class="mt-10 flex flex-col gap-2 border-t border-stage-line pt-6 type-caption text-on-stage-muted sm:flex-row sm:items-center sm:justify-between">
               <p>&copy; ${year} ${BRAND.full}. All rights reserved.</p>
-              <p>Photography from Unsplash and Pexels.</p>
             </div>
           </div>
         </footer>`;
