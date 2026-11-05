@@ -104,8 +104,22 @@ Links to unbuilt pages currently lead to a missing file; that is expected until 
 | Item | Where |
 |---|---|
 | Studio name and logo (temporary name + twin-silk mark in use) | Header, footer, page title, hero eyebrow |
-| Address, opening hours, phone, email, social channels | Footer |
+| Address, opening hours | Contact page map (no pin until set) |
+| Phone, email | `CONTACT` in `assets/js/site-chrome.js` — shows in the footer and on the Contact page as `tel:` / `mailto:` links once filled in |
+| Social profile URLs | `SOCIAL_LINKS` in `assets/js/site-chrome.js` |
+| Instructor profiles | `INSTRUCTORS` in `assets/js/instructors.js` (fields documented at the top of the file) |
+| Google / Apple sign-in credentials | `OAUTH` in `assets/js/portal.js` (see below) |
 | Privacy policy, terms | Footer |
+
+### Google and Apple sign-in (portal)
+
+The Sign-in tab has Google and Apple buttons. They are **prepared but not connected**: clicking one says sign-in isn't available and signs nobody in. Real sign-in needs, for each provider:
+
+- **Google:** an OAuth 2.0 Client ID from Google Cloud Console, with this site's origin and a redirect URI authorised.
+- **Apple:** a Services ID, Team ID and Key ID from the Apple Developer account, with the domain and return URL registered.
+- **Both:** a server (or auth service) to exchange the authorisation code and create the session. This static site has none, so nothing here can complete a sign-in.
+
+When those exist, put the client ID and redirect URI into `OAUTH` in `assets/js/portal.js` and replace the click handler with the real flow.
 
 ### Home 1 — awaiting studio confirmation
 

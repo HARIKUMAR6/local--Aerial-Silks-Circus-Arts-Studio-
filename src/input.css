@@ -148,7 +148,9 @@
     overflow-x: clip;
   }
 
-  h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+  h1, h2, h3, h4, h5, h6 { text-wrap: balance; font-weight: 600; }
+  /* Emphasis inside running text stays within the 400–550 supporting-text range */
+  p strong, li strong, dd strong, figcaption strong { font-weight: 550; }
   p { text-wrap: pretty; }
 
   img { height: auto; }
@@ -186,7 +188,7 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
 @utility type-display {
   font-size: clamp(3.5rem, 2rem + 7vw, 9rem);
   line-height: 0.88;
-  font-weight: 900;
+  font-weight: 600;
   font-stretch: 62%;
   text-transform: uppercase;
   letter-spacing: -0.01em;
@@ -196,7 +198,7 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
 @utility type-statement {
   font-size: clamp(2.75rem, 1.8rem + 4.5vw, 6rem);
   line-height: 0.9;
-  font-weight: 900;
+  font-weight: 600;
   font-stretch: 62%;
   text-transform: uppercase;
   overflow-wrap: anywhere;
@@ -205,7 +207,7 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
 @utility type-h1 {
   font-size: clamp(2.5rem, 1.6rem + 3.4vw, 4.5rem);
   line-height: 0.92;
-  font-weight: 850;
+  font-weight: 600;
   font-stretch: 62%;
   text-transform: uppercase;
   overflow-wrap: anywhere;
@@ -213,7 +215,7 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
 @utility type-h2 {
   font-size: clamp(1.875rem, 1.3rem + 2.3vw, 3.25rem);
   line-height: 1;
-  font-weight: 800;
+  font-weight: 600;
   font-stretch: 68%;
   text-transform: uppercase;
   overflow-wrap: anywhere;
@@ -221,19 +223,19 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
 @utility type-h3 {
   font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.25rem);
   line-height: 1.08;
-  font-weight: 750;
+  font-weight: 600;
   font-stretch: 75%;
   text-transform: uppercase;
 }
 @utility type-h4 {
   font-size: 1.375rem;
   line-height: 1.25;
-  font-weight: 700;
+  font-weight: 600;
 }
 @utility type-h5 {
   font-size: 1.125rem;
   line-height: 1.35;
-  font-weight: 650;
+  font-weight: 600;
 }
 @utility eyebrow {
   font-size: 0.8125rem;
@@ -519,9 +521,26 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
   }
   .brand-mark { flex: none; width: 2.25rem; height: 2.25rem; }
   .brand-text { display: flex; flex-direction: column; line-height: 1; }
+  /* Brand that links home (public footer, dashboard): clear hover + pointer */
+  a.brand { cursor: pointer; transition: opacity 150ms var(--ease-release); }
+  a.brand:hover { opacity: 0.82; }
+  a.brand:hover .brand-name { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 0.2em; }
+
+  /* Footer link: same height, colour and hover for every group */
+  .footer-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    color: var(--color-on-stage);
+    font-size: 0.9375rem;
+    text-decoration: none;
+  }
+  @media (width >= 64rem) { .footer-link { min-height: 2.25rem; } }
+  .footer-link:hover { color: var(--color-vermilion-hover); text-decoration: underline; text-underline-offset: 0.25em; }
+  .footer-link svg { flex: none; color: var(--color-crimson-light); }
   .brand-name {
     font-size: 1.125rem;
-    font-weight: 900;
+    font-weight: 600;
     font-stretch: 62%;
     letter-spacing: 0.02em;
     text-transform: uppercase;
@@ -639,7 +658,7 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
     background: transparent;
     color: var(--color-on-stage);
     font-size: 0.75rem;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.1em;
     cursor: pointer;
     transition: background-color 150ms var(--ease-release), border-color 150ms var(--ease-release);
@@ -690,7 +709,7 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
     font-family: inherit;
     font-size: clamp(1.875rem, 1.2rem + 4.5vw, 3rem);
     line-height: 1.05;
-    font-weight: 800;
+    font-weight: 600;
     font-stretch: 62%;
     text-transform: uppercase;
     cursor: pointer;
@@ -739,7 +758,7 @@ html:not([dir="rtl"]) .when-rtl { display: none; }
     background: transparent;
     color: var(--color-on-stage);
     font-size: 0.8125rem;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     cursor: pointer;
@@ -1073,7 +1092,7 @@ html[data-theme="dark"] .map-frame .leaflet-tile-pane {
     background: transparent;
     color: var(--color-crimson);
     font-size: 0.8125rem;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     cursor: pointer;

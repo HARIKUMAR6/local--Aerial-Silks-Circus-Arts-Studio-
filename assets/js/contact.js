@@ -143,6 +143,38 @@
     }
   }
 
+  /* ------------------------------------------------- Contact details
+     Email and phone come from CONTACT in site-chrome.js and show only when set. */
+  function initDetails() {
+    const list = document.getElementById("contact-details");
+    const site = window.StudioSite;
+    if (!list || !site) return;
+    const { email, phone } = site.contact;
+    const row = (href, iconSvg, label, value, ltr) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = href;
+      a.className = "group flex min-h-14 items-center gap-4 border border-line bg-paper px-4 py-3 text-fg no-underline hover:border-crimson";
+      a.innerHTML = '<span class="flex size-10 shrink-0 items-center justify-center rounded-full bg-stage text-on-stage" aria-hidden="true"></span><span class="min-w-0"><span class="eyebrow block text-muted"></span><span class="type-h5 block break-words group-hover:text-crimson"></span></span>';
+      a.firstChild.innerHTML = iconSvg;
+      a.querySelector(".eyebrow").textContent = label;
+      const v = a.querySelector(".type-h5");
+      v.textContent = value;
+      if (ltr) v.style.direction = "ltr";
+      li.appendChild(a);
+      list.appendChild(li);
+    };
+    const svg = (d) => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" focusable="false">' + d + "</svg>";
+    if (email) row("mailto:" + email, svg('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6.5L20.5 7"/>'), "Email", email, true);
+    if (phone) row(site.telHref(phone), svg('<path d="M5 4h3.5l1.5 4-2 1.5a11 11 0 0 0 5.5 5.5L15 13l4 1.5V18a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2Z"/>'), "Phone", phone, true);
+    if (list.children.length) {
+      list.hidden = false;
+      const pending = document.getElementById("contact-pending");
+      if (pending) pending.hidden = true;
+    }
+  }
+
+  initDetails();
   initForm();
   if (document.readyState === "complete") initMap();
   else window.addEventListener("load", initMap);

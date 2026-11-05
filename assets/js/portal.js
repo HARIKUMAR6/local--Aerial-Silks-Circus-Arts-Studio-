@@ -13,6 +13,15 @@
   const SIGNIN_MESSAGE =
     "<strong>Sign-in isn't available yet.</strong> You have not been signed in and your details were not saved.";
 
+  /* Google / Apple sign-in — PREPARED, NOT CONNECTED.
+     Real OAuth needs credentials issued by each provider and a server to complete the
+     exchange; this static site has neither. Fill these in when they exist (README
+     "Google and Apple sign-in"). Until then the buttons say so and sign nobody in. */
+  const OAUTH = {
+    google: { label: "Google", clientId: "", redirectUri: "" },
+    apple: { label: "Apple", clientId: "", redirectUri: "" },
+  };
+
   const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
 
   /* ------------------------------------------------- Tabs (Sign in / Register) */
@@ -140,6 +149,22 @@
     },
     REGISTER_MESSAGE
   );
+
+  /* ------------------------------------------------------ Google / Apple buttons */
+  const oauthStatus = document.getElementById("oauth-status");
+  document.querySelectorAll("[data-oauth]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const p = OAUTH[btn.dataset.oauth];
+      const configured = p.clientId && p.redirectUri;
+      oauthStatus.className = "form-status form-status--info";
+      oauthStatus.setAttribute("role", "status");
+      oauthStatus.innerHTML = configured
+        ? `<strong>${p.label} sign-in isn't available yet.</strong> The provider settings are present, but no server is connected to complete sign-in. You have not been signed in.`
+        : `<strong>${p.label} sign-in isn't available yet.</strong> It hasn't been set up with ${p.label}, so you have not been signed in.`;
+      oauthStatus.hidden = false;
+      oauthStatus.focus();
+    });
+  });
 
   /* ------------------------------------------------- Theme / direction buttons */
   if (window.StudioPrefs) {

@@ -84,7 +84,7 @@
       ["Practice logged", "50 min"],
     ];
     $("[data-stats]").innerHTML = stats
-      .map(([k, v]) => `<div class="bg-paper p-4 sm:p-5"><dt class="type-small text-muted">${k}</dt><dd class="mt-1 text-[clamp(1.75rem,1.4rem+1vw,2.25rem)] font-extrabold leading-none tabular-nums [font-stretch:75%]">${v}</dd></div>`)
+      .map(([k, v]) => `<div class="bg-paper p-4 sm:p-5"><dt class="type-small text-muted">${k}</dt><dd class="mt-1 text-[clamp(1.75rem,1.4rem+1vw,2.25rem)] font-semibold leading-none tabular-nums [font-stretch:75%]">${v}</dd></div>`)
       .join("");
 
     $("[data-next-classes]").innerHTML = upcoming.slice(0, 3)
@@ -97,7 +97,7 @@
       <div class="relative size-24 shrink-0" role="img" aria-label="${current.name} stage: ${p}% of skills reached">
         <svg viewBox="0 0 36 36" class="size-24 -rotate-90"><circle cx="18" cy="18" r="15.5" fill="none" stroke="var(--color-line)" stroke-width="3.5"/>
           <circle cx="18" cy="18" r="15.5" fill="none" stroke="var(--color-crimson)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="${(p / 100) * 97.4} 97.4"/></svg>
-        <span class="absolute inset-0 flex items-center justify-center text-xl font-extrabold tabular-nums" aria-hidden="true">${p}%</span>
+        <span class="absolute inset-0 flex items-center justify-center text-xl font-semibold tabular-nums" aria-hidden="true">${p}%</span>
       </div>
       <div><p class="type-h3">${current.name}</p><p class="type-small text-muted">${current.skills.filter(([, d]) => d).length} of ${current.skills.length} skills reached</p></div>`;
   }
@@ -165,7 +165,7 @@
       <section class="rounded border border-line bg-paper p-5 sm:p-6" aria-labelledby="st-${s.key}">
         <div class="flex items-baseline justify-between gap-3">
           <h2 id="st-${s.key}" class="type-h3">${s.name}</h2>
-          <span class="font-extrabold tabular-nums" data-pct="${si}">${p}%</span>
+          <span class="font-semibold tabular-nums" data-pct="${si}">${p}%</span>
         </div>
         <div class="mt-3 h-2 overflow-hidden rounded-full bg-sand" role="progressbar" aria-label="${s.name} progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${p}" data-bar="${si}">
           <div class="h-full rounded-full bg-crimson transition-[width] duration-300" style="width:${p}%"></div>

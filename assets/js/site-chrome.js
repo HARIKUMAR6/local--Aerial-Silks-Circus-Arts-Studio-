@@ -21,8 +21,20 @@
     full: "Aerial Silks & Circus Arts Studio",
     line1: "Aerial Silks &",
     line2: "Circus Arts Studio",
-    note: "Temporary name and logo — final studio branding to be confirmed",
+    // One tagline, used everywhere it appears (footer, About hero, brand tooltip)
+    tagline: "An aerial silks and circus arts studio, built on strength and expression in equal measure.",
   };
+
+  /* Studio contact details. PLACEHOLDERS: none are verified in the project yet.
+     Fill in `email` and `phone` (e.g. "name@studio.example", "+00 000 000 0000")
+     and they appear — as mailto: / tel: links — in the footer and on the Contact page.
+     While a value is empty it is simply not shown: no invented or dead details. */
+  const CONTACT = {
+    email: "",
+    phone: "",
+  };
+  const telHref = (n) => "tel:" + n.replace(/[^0-9+]/g, "");
+  window.StudioSite = { brand: BRAND, contact: CONTACT, telHref };
 
   /* Destinations. Pages marked planned do not exist yet; the links are ready
      for when they are built (see README "Build status"). */
@@ -59,6 +71,8 @@
 
   /* ----------------------------------------------------------------- Icons */
   const icon = {
+    mail: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6.5L20.5 7"/></svg>`,
+    phone: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 4h3.5l1.5 4-2 1.5a11 11 0 0 0 5.5 5.5L15 13l4 1.5V18a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>`,
     arrow: `<svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>`,
     chevron: `<svg class="chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2 4.25 4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>`,
     sun: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.25M12 19.25v2.25M2.5 12h2.25M19.25 12h2.25M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>`,
@@ -75,7 +89,7 @@
     </svg>`;
 
   const brandLink = () => `
-    <a href="${LINKS.home}" class="brand" title="${BRAND.note}" aria-label="${BRAND.full} — home">
+    <a href="${LINKS.home}" class="brand" title="${BRAND.tagline}" aria-label="${BRAND.full} — home">
       ${logoMark("brand-mark")}
       <span class="brand-text" aria-hidden="true">
         <span class="brand-name">${BRAND.line1}</span>
@@ -253,8 +267,8 @@
               <div class="hidden items-center gap-2 xl:flex">
                 ${themeIconButton()}
                 ${dirIconButton()}
-                <a href="${LINKS.login}" class="nav-link ms-2">Student login</a>
-                <a href="${LINKS.book}" class="btn btn-primary btn-sm ms-2 whitespace-nowrap">Book a class</a>
+                <a href="${LINKS.book}" class="btn btn-secondary btn-sm ms-2">Book a class</a>
+                <a href="${LINKS.login}" class="btn btn-primary btn-sm">Login</a>
               </div>
 
               <div class="flex items-center xl:hidden">
@@ -306,8 +320,8 @@
             </div>
 
             <div class="mt-auto flex flex-col gap-3 pt-8 sm:flex-row">
-              <a href="${LINKS.book}" class="btn btn-primary btn-lg">Book a class ${icon.arrow}</a>
-              <a href="${LINKS.login}" class="btn btn-secondary btn-lg">Student login</a>
+              <a href="${LINKS.login}" class="btn btn-primary btn-lg">Login ${icon.arrow}</a>
+              <a href="${LINKS.book}" class="btn btn-secondary btn-lg">Book a class</a>
             </div>
           </div>
         </div>`;
@@ -455,48 +469,63 @@
           : `<li><span class="${base}" role="img" aria-label="${label}">${glyph}</span></li>`;
       }).join("");
 
-      // Plain facts only — each is stated on the studio's own pages. No contact details, no links.
-      const facts = (items) =>
-        `<ul class="mt-4 space-y-2.5" role="list">${items
-          .map((t) => `<li class="flex gap-3 type-small text-on-stage"><span class="mt-[0.6em] block h-0.5 w-3 shrink-0 bg-crimson-light" aria-hidden="true"></span><span>${t}</span></li>`)
-          .join("")}</ul>`;
+      // Link groups. Every destination is an existing page of this site.
+      const group = (id, title, links) => `
+        <nav aria-labelledby="${id}">
+          <h2 id="${id}" class="eyebrow text-on-stage-muted">${title}</h2>
+          <ul class="mt-3 space-y-0.5" role="list">${links
+            .map(([label, href]) => `<li><a href="${href}" class="footer-link">${label}</a></li>`)
+            .join("")}</ul>
+        </nav>`;
+
+      // Contact rows appear only for details that are filled in (see CONTACT above).
+      const rows = [];
+      if (CONTACT.email) rows.push(`<li><a href="mailto:${CONTACT.email}" class="footer-link gap-3">${icon.mail}<span class="break-all">${CONTACT.email}</span></a></li>`);
+      if (CONTACT.phone) rows.push(`<li><a href="${telHref(CONTACT.phone)}" class="footer-link gap-3">${icon.phone}<span class="[direction:ltr]">${CONTACT.phone}</span></a></li>`);
+      const contact = `
+        <div>
+          <h2 class="eyebrow text-on-stage-muted">Contact</h2>
+          <ul class="mt-3 space-y-0.5" role="list">
+            ${rows.join("")}
+            <li><a href="contact.html#enquiry" class="footer-link">Send an enquiry</a></li>
+          </ul>
+        </div>`;
 
       this.innerHTML = `
         <footer class="on-stage bg-stage">
           <div class="shell border-t border-stage-line pt-12 pb-8 lg:pt-14">
-            <div class="grid grid-cols-[minmax(0,1fr)] gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+            <div class="grid grid-cols-[minmax(0,1fr)] gap-10 min-[34rem]:grid-cols-2 lg:grid-cols-12 lg:gap-8">
 
-              <div class="sm:col-span-2 lg:col-span-4">
-                <div class="flex items-center gap-4">
-                  ${logoMark("size-12 shrink-0")}
-                  <p class="text-[clamp(1.5rem,1.2rem+1vw,2rem)] font-black uppercase leading-[0.9] [direction:ltr] [font-stretch:62%] rtl:text-right">
-                    ${BRAND.line1}<br>${BRAND.line2}
-                  </p>
-                </div>
-                <p class="mt-5 max-w-[26rem] text-on-stage">An aerial silks and circus arts studio, built on strength and expression in equal measure.</p>
+              <div class="min-[34rem]:col-span-2 lg:col-span-4">
+                <a href="${LINKS.home}" class="brand footer-brand" aria-label="${BRAND.full} — home">
+                  ${logoMark("brand-mark")}
+                  <span class="brand-text" aria-hidden="true">
+                    <span class="brand-name">${BRAND.line1}</span>
+                    <span class="brand-sub">${BRAND.line2}</span>
+                  </span>
+                </a>
+                <p class="mt-5 max-w-[26rem] text-on-stage">${BRAND.tagline}</p>
+                <ul class="mt-6 flex w-fit gap-3" role="list" aria-label="Social media">${social}</ul>
               </div>
 
-              <div class="lg:col-span-3">
-                <h2 class="eyebrow text-on-stage-muted">The studio</h2>
-                ${facts([
-                  "Aerial silks is the core discipline",
-                  "Training from first climb to performance",
-                  "Strength and expression, in equal measure",
+              <div class="lg:col-span-2 lg:col-start-6">
+                ${group("footer-explore", "Explore", [
+                  ["Home 1", LINKS.home],
+                  ["Home 2", LINKS.home2],
+                  ...NAV_ITEMS.filter((i) => i.key !== "dashboard").map((i) => [i.label, i.href]),
                 ])}
               </div>
 
-              <div class="lg:col-span-3">
-                <h2 class="eyebrow text-on-stage-muted">Good to know</h2>
-                ${facts([
-                  "Everyone starts low, then builds height",
-                  "Technique comes before height",
-                  "Progress at your own pace",
+              <div class="lg:col-span-2">
+                ${group("footer-students", "Students", [
+                  ["Book a class", LINKS.book],
+                  ["Login", LINKS.login],
+                  ["Dashboard", LINKS.dashboard],
                 ])}
               </div>
 
-              <div class="sm:col-span-2 lg:col-span-2">
-                <h2 class="eyebrow text-on-stage-muted">Follow</h2>
-                <ul class="mt-4 grid w-fit grid-cols-4 gap-3 sm:gap-2.5 lg:grid-cols-2" role="list">${social}</ul>
+              <div class="min-[34rem]:col-span-2 lg:col-span-3 lg:col-start-10">
+                ${contact}
               </div>
             </div>
 

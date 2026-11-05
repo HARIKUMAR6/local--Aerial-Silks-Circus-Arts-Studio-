@@ -27,7 +27,8 @@
 
 <!--
   CONTACT — five sections: Hero · Get in touch · Send an enquiry · Find the studio · Before you reach out.
-  No phone, email, address, hours or social links are shown: none are verified in the project.
+  Email and phone render from CONTACT in assets/js/site-chrome.js once they are filled in; none are verified yet.
+  No address, hours or social links are shown: none are verified in the project.
   The form has no backend and says so; the map shows no studio pin until an address is confirmed (see contact.js).
 -->
 <body id="top">
@@ -38,7 +39,7 @@
       <nav aria-label="Main" class="on-stage bg-stage px-4 py-3">
         <a href="index.html">Home 1</a> · <a href="home-2.html">Home 2</a> · <a href="about.html">About</a> ·
         <a href="classes.html">Classes</a> · <a href="instructors.html">Instructors</a> · <a href="contact.html" aria-current="page">Contact</a> ·
-        <a href="portal/dashboard.html">Dashboard</a> · <a href="portal/index.html">Student login</a>
+        <a href="portal/dashboard.html">Dashboard</a> · <a href="portal/index.html">Login</a>
       </nav>
     </noscript>
   </site-header>
@@ -92,7 +93,9 @@
           <div class="lg:col-span-4" data-reveal>
             <p class="eyebrow text-crimson">Get in touch</p>
             <h2 id="ct-touch-title" class="type-h2 mt-4">Write to us <span class="accent-serif text-crimson">here.</span></h2>
-            <p class="mt-3 max-w-[26rem] text-muted">The enquiry form below is the best way to reach the studio. Direct contact details will be listed on this page once they are published.</p>
+            <p class="mt-3 max-w-[26rem] text-muted">The enquiry form below is the best way to reach the studio.<span id="contact-pending"> Direct contact details will be listed on this page once they are published.</span></p>
+            <!-- Filled from CONTACT in assets/js/site-chrome.js: email (mailto:) and phone (tel:), only when set -->
+            <ul id="contact-details" class="mt-6 space-y-3" role="list" aria-label="Studio contact details" hidden></ul>
           </div>
 
           <nav class="lg:col-span-7 lg:col-start-6" aria-labelledby="ct-topics-title" data-reveal>
@@ -208,17 +211,17 @@
           srcset="assets/images/contact/close-silks-cliff-800.jpg 800w, assets/images/contact/close-silks-cliff-1600.jpg 1600w"
           sizes="100vw" width="1600" height="1045" alt=""
           class="object-[70%_40%] opacity-45" loading="lazy" decoding="async">
-        <div class="absolute inset-0 bg-linear-to-r from-stage via-stage/90 to-stage/40 rtl:bg-linear-to-l" aria-hidden="true"></div>
+        <div class="absolute inset-0 bg-stage/80" aria-hidden="true"></div>
       </div>
 
       <div class="shell section-y">
-        <div class="max-w-[42rem]" data-reveal>
+        <div class="mx-auto max-w-[42rem] text-center" data-reveal>
           <p class="eyebrow text-crimson-light">Before you reach out</p>
-          <h2 id="ct-before-title" class="type-h1 mt-6">A few things that <span class="accent-serif text-crimson-light">help.</span></h2>
-          <ol class="mt-8 space-y-4" role="list">
-            <li class="flex items-baseline gap-4 border-t border-stage-line pt-4"><span class="folio text-crimson-light" aria-hidden="true">i</span><p class="text-on-stage">Mention any aerial, dance or movement experience — or none at all.</p></li>
-            <li class="flex items-baseline gap-4 border-t border-stage-line pt-4"><span class="folio text-crimson-light" aria-hidden="true">ii</span><p class="text-on-stage">Say which apparatus or discipline you're curious about.</p></li>
-            <li class="flex items-baseline gap-4 border-y border-stage-line py-4"><span class="folio text-crimson-light" aria-hidden="true">iii</span><p class="text-on-stage">Let us know about any injuries or health questions you'd like to discuss.</p></li>
+          <h2 id="ct-before-title" class="type-h1 mx-auto mt-6">A few things that <span class="accent-serif text-crimson-light">help.</span></h2>
+          <ol class="mt-8 text-center" role="list">
+            <li class="flex flex-col items-center gap-1 border-t border-stage-line py-4"><span class="folio text-crimson-light" aria-hidden="true">i</span><p class="text-on-stage">Mention any aerial, dance or movement experience — or none at all.</p></li>
+            <li class="flex flex-col items-center gap-1 border-t border-stage-line py-4"><span class="folio text-crimson-light" aria-hidden="true">ii</span><p class="text-on-stage">Say which apparatus or discipline you're curious about.</p></li>
+            <li class="flex flex-col items-center gap-1 border-y border-stage-line py-4"><span class="folio text-crimson-light" aria-hidden="true">iii</span><p class="text-on-stage">Let us know about any injuries or health questions you'd like to discuss.</p></li>
           </ol>
           <a href="#enquiry" class="btn btn-primary btn-lg mt-8">
             Write your enquiry
