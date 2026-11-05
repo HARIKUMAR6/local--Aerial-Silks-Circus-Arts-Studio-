@@ -25,13 +25,17 @@
     tagline: "An aerial silks and circus arts studio, built on strength and expression in equal measure.",
   };
 
-  /* Studio contact details. PLACEHOLDERS: none are verified in the project yet.
-     Fill in `email` and `phone` (e.g. "name@studio.example", "+00 000 000 0000")
-     and they appear — as mailto: / tel: links — in the footer and on the Contact page.
-     While a value is empty it is simply not shown: no invented or dead details. */
+  /* Studio contact details — DEMO VALUES. The studio has not supplied real ones.
+     - email: on the reserved ".example" domain (RFC 2606), which can never receive mail.
+     - phone: in the 555-01xx block reserved for fiction, which is never assigned.
+     To go live, replace `email` and `phone` with the studio's own and set `demo`
+     to false: the "demo" labels disappear and every place that shows contact details
+     (Contact page, footer) updates from this one object. */
   const CONTACT = {
-    email: "",
-    phone: "",
+    email: "hello@aerial-silks-studio.example",
+    phone: "+1 555 010 0123",
+    demo: true,
+    demoNote: "Demo contact details — not the studio's real email or phone.",
   };
   const telHref = (n) => "tel:" + n.replace(/[^0-9+]/g, "");
   window.StudioSite = { brand: BRAND, contact: CONTACT, telHref };
@@ -489,6 +493,7 @@
             ${rows.join("")}
             <li><a href="contact.html#enquiry" class="footer-link">Send an enquiry</a></li>
           </ul>
+          ${CONTACT.demo && rows.length ? `<p class="mt-2 max-w-[18rem] type-caption text-on-stage-muted">${CONTACT.demoNote}</p>` : ""}
         </div>`;
 
       this.innerHTML = `

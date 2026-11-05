@@ -105,9 +105,9 @@ Links to unbuilt pages currently lead to a missing file; that is expected until 
 |---|---|
 | Studio name and logo (temporary name + twin-silk mark in use) | Header, footer, page title, hero eyebrow |
 | Address, opening hours | Contact page map (no pin until set) |
-| Phone, email | `CONTACT` in `assets/js/site-chrome.js` — shows in the footer and on the Contact page as `tel:` / `mailto:` links once filled in |
+| Phone, email | **Demo values** in `CONTACT` in `assets/js/site-chrome.js` (`hello@aerial-silks-studio.example`, `+1 555 010 0123` — reserved, non-working). Shown on the Contact page and footer as `mailto:` / `tel:` links, labelled demo. Replace both and set `demo: false` |
 | Social profile URLs | `SOCIAL_LINKS` in `assets/js/site-chrome.js` |
-| Instructor profiles | `INSTRUCTORS` in `assets/js/instructors.js` (fields documented at the top of the file) |
+| Instructor profiles | **Four illustrative sample profiles** in `INSTRUCTORS` in `assets/js/instructors.js` — invented names/backgrounds, stock photos, labelled "Illustrative" on the page. Replace them and set `ILLUSTRATIVE = false` |
 | Google / Apple sign-in credentials | `OAUTH` in `assets/js/portal.js` (see below) |
 | Privacy policy, terms | Footer |
 
@@ -271,6 +271,12 @@ Verified unique against Home 1, Home 2, About and Classes.
 | `guidance-watching-hoop` | 3 · Meet the instructors | [10039534](https://www.pexels.com/photo/woman-looking-at-gymnast-on-ring-10039534/) | cristian-rojas |
 | `practice-pink-hoop` | 4 · The practice (frame 01) | [37129661](https://www.pexels.com/photo/dynamic-aerial-hoop-performer-with-vibrant-lighting-37129661/) | psiconauta |
 | `practice-spotlight-hoop` | 4 · The practice (frame 03) | [35228140](https://www.pexels.com/photo/elegant-aerial-performer-in-spotlight-with-hoop-35228140/) | leticiacurveloph |
+| `profile-white-fabric` | 3 · Illustrative profile (Mara Ellison) | [4323336](https://www.pexels.com/photo/woman-in-black-tank-top-holding-white-sheer-textile-4323336/) | see source page |
+| `profile-violet-silks` | 3 · Illustrative profile (Julian Reyes) | [13990510](https://www.pexels.com/photo/man-dancing-on-aerial-silks-13990510/) | That Photoguy MATT |
+| `profile-crimson-inversion` | 3 · Illustrative profile (Elena Voss) | [30131215](https://www.pexels.com/photo/graceful-aerial-silk-acrobat-performing-in-brazil-30131215/) | see source page |
+| `profile-window-hammock` | 3 · Illustrative profile (Anika Rao) | [4999868](https://www.pexels.com/photo/woman-hanging-upside-down-4999868/) | see source page |
+
+The four `profile-*` photos show stock-photo performers, not the invented instructors named beside them. Photographer credits marked "see source page" were not recorded when the files were downloaded.
 
 ### Contact (`contact.html`)
 
